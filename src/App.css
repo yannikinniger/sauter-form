@@ -1,5 +1,11 @@
+@font-face {
+  font-family: "Futura";
+  src: url("/assets/futura-book.ttf");
+}
+
 .App {
   text-align: center;
+  font-family: Futura;
 }
 
 .App-logo {
@@ -7,11 +13,19 @@
   height: 80px;
 }
 
+#logo {
+  max-width: 400px;
+  align-self: center;
+}
+
 .App-header {
-  background-color: #222;
   height: 150px;
   padding: 20px;
   color: white;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+  background-color: #053653;
 }
 
 .App-title {
@@ -41,6 +55,8 @@
   margin-right: 10px;
   display: inherit;
   margin-bottom: 10px;
+  color: #0d88d3;
+  font-weight: bold;
 }
 
 .form-row > input, .form-row > select {

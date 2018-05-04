@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import logo from './logo.svg';
 import './App.css';
 import OrderView from './views/order-view/order-view.jsx'
 
@@ -8,8 +7,7 @@ class App extends Component {
         return (
             <div className="App">
                 <header className="App-header">
-                    <img src={logo} className="App-logo" alt="logo"/>
-                    <h1 className="App-title">Welcome to React</h1>
+                    <img src="/assets/logo.png" id="logo" alt="logo"/>
                 </header>
                 <div id="content-container">
                     <OrderView/>
