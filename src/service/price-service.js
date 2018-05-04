@@ -8,10 +8,11 @@ export const PriceService = configObject => {
             const dn = configObject.getDn();
             if (dn !== null && configObject.getKvs() != null) {
                 const dnNumber = parseInt(dn.substr(2,dn.length), 10);
+                const amount = parseInt(configObject.getQuantity(), 10);
                 if (dnNumber < 32) {
-                    return basePrice
+                    return basePrice * amount;
                 } else {
-                    return biggerPrice;
+                    return biggerPrice * amount;
                 }
             }
         }

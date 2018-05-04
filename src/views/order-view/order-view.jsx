@@ -33,7 +33,7 @@ export default class OrderView extends React.Component {
         this.state.configObject.setKvs(kvs);
         this.state.configObject.setValveAmount('2');
         this.listenersToActivate.forEach(listener => listener())
-        this.state.configObject.notifiyListeners();
+        this.state.configObject.notifyListeners();
     }
 
     render() {

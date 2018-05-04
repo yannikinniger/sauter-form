@@ -3,38 +3,34 @@ export const Configuration = () => {
         dn: null,
         valveAmount: null,
         kvs: null,
-        amount: 1
+        quantity: 1
     };
     const listeners = [];
 
     const notifyListeners = () => listeners.forEach(listener => listener(data));
 
+    const setValue = (key, value) => {
+        if (data[key] !== undefined && value !== data[key]) {
+            data[key] = value;
+            notifyListeners();
+        }
+    };
+
     return {
         registerListener: callback => listeners.push(callback),
-        setDn: newDn => {
-            if (newDn === data['dn']) { return }
-            data['dn'] = newDn;
-            notifyListeners();
-        },
+        setDn: newDn => setValue('dn', newDn),
         getDn: () => data['dn'],
-        setValveAmount: newValveAmount => {
-            if (newValveAmount === data['valveAmount']) { return }
-            data['valveAmount'] = newValveAmount;
-            notifyListeners();
-        },
+        setValveAmount: newValveAmount => setValue('valveAmount', newValveAmount),
         getValveAmount: () => data['valveAmount'],
-        setKvs: newKvs => {
-            if (newKvs === data['kvs']) { return }
-            data['kvs'] = newKvs;
-            notifyListeners();
-        },
+        setKvs: newKvs => setValue('kvs', newKvs),
         getKvs: () => data['kvs'],
-        setValue: (key, value) => {
-            if (data[key] !== undefined && value !== data[key]) {
-                data[key] = value;
-                notifyListeners();
+        setValue: (key, value) => setValue(key, value),
+        getQuantity: () => data['quantity'],
+        setQuantity: newQuantity => {
+            if(parseInt(newQuantity, 10) > 0) {
+                setValue('quantity', newQuantity)
             }
         },
-        notifiyListeners: () => notifyListeners(),
+        notifyListeners: () => notifyListeners(),
     }
 };
