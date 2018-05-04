@@ -1,13 +1,9 @@
 import React from 'react';
 import AddressSection from '../../components/address-section/address-section'
-import InputRadio from '../../components/input-radio/input-radio'
-import DnKvsSelection from '../../components/dn-kvs-selection/dn-kvs-selection'
 import {Configuration} from '../../model/configuration'
-import PriceDisplay from "../../components/price-display/price-display";
-import './order-view.css'
+import '../view.css'
 
 export default class AddressView extends React.Component {
-
 
     constructor(props) {
         super(props);
@@ -24,7 +20,7 @@ export default class AddressView extends React.Component {
 
     render() {
         return (
-            <div>
+            <div id="content">
                 <AddressSection title="Lieferadresse"/>
                 <div className="form-row">
                     <span>
@@ -37,8 +33,9 @@ export default class AddressView extends React.Component {
                     :
                     <AddressSection title="Rechnungsadresse"/>
                 }
-                <div className="form-row">
-                    <button>Weiter</button>
+                <div className="twin-button-row">
+                    <button onClick={() => this.props.history.push('/')}>Zurück</button>
+                    <button onClick={() => this.props.history.push('/checkout')}>Weiter</button>
                 </div>
             </div>
         )

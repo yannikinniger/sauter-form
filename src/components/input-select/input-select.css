@@ -32,11 +32,14 @@ select::-ms-expand {
     float: right;
     margin: 5px 0;
     padding: 0 5px;
-    font-size: 16px;
     line-height: 1.75;
     color: #333;
     background-color: white;
     border: 1px solid #CCC;
     -ms-word-break: normal;
     word-break: normal;
+}
+
+option {
+    background: white;
 }

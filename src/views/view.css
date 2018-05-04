@@ -13,14 +13,29 @@
 
 .form-row > input, .form-row > select {
     width: 100%;
+    min-width: 20px;
 }
 
-.twin-form-row {
+
+.form-row span {
+    display: inline-flex;
+    align-items: center;
+}
+
+.twin-form-row, .twin-button-row {
     display: flex;
     justify-content: space-between;
 }
 
-form {
+.twin-button-row > :first-child {
+    margin-right: 10px;
+}
+
+.twin-button-row > :nth-child(2) {
+    margin-right: -10px;
+}
+
+#content {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -28,26 +43,7 @@ form {
     width: 20em;
 }
 
-form h2 {
+#content h2 {
     margin-bottom: 10px;
     margin-top: 0;
-}
-
-button {
-    padding: 10px;
-    background: #0d88d3;
-    color: white;
-    font-weight: bold;
-    border-radius: 5px;
-    border: none;
-    width: 100%;
-    margin-top: 20px;
-}
-
-button:hover:active {
-    background: #10A4FF;
-}
-
-button:hover{
-    background: #0B70AD;
 }

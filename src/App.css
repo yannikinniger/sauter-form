@@ -1,49 +1,71 @@
 @font-face {
-  font-family: "Futura";
-  src: url("/assets/futura-book.ttf");
+    font-family: "Futura";
+    src: url("/assets/futura-book.ttf");
 }
 
 .App {
-  text-align: center;
-  font-family: Futura;
-  font-size: 1rem;
-  margin-bottom: 150px;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-#logo {
-  max-width: 400px;
-  align-self: center;
+    text-align: center;
+    font-family: Futura;
+    font-size: 16px;
+    margin-bottom: 150px;
 }
 
 .App-header {
-  height: 150px;
-  padding: 20px;
-  color: white;
-  display: flex;
-  justify-content: center;
-  margin-bottom: 30px;
-  background-color: #E5F2FD;
+    height: 150px;
+    padding: 20px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    background-color: #E5F2FD;
 }
 
-.App-title {
-  font-size: 1.5em;
+@media only screen and (max-width: 600px) {
+    .App-header {
+        height: 40px;
+    }
+
+    #logo {
+        width: 200px;
+    }
 }
 
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+#logo {
+    max-width: 400px;
+    align-self: center;
 }
 
 #content-container {
-  display: flex;
-  justify-content: center;
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    padding: 10px;
+    background: #0d88d3;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    border: none;
+    width: 100%;
+    margin-top: 20px;
+}
+
+button:hover:active {
+    background: #10A4FF;
+}
+
+button:hover {
+    background: #0B70AD;
+}
+
+button > a {
+    text-decoration: none;
+    color: white;
+}
+
+input {
+    height: 36px;
+    border: 1px solid #CCC;
+    padding: 0 5px;
 }

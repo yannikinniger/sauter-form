@@ -3,7 +3,8 @@ import InputRadio from '../../components/input-radio/input-radio'
 import DnKvsSelection from '../../components/dn-kvs-selection/dn-kvs-selection'
 import {Configuration} from '../../model/configuration'
 import PriceDisplay from "../../components/price-display/price-display";
-import './order-view.css'
+import '../view.css'
+import { Link } from 'react-router-dom'
 
 export default class OrderView extends React.Component {
 
@@ -38,7 +39,7 @@ export default class OrderView extends React.Component {
 
     render() {
         return (
-            <form>
+            <div id="content">
                 <div id="product-section">
                     <h2>Produkt</h2>
                     <InputRadio name="Ventiltyp" options={this.valveOptions}
@@ -48,9 +49,11 @@ export default class OrderView extends React.Component {
                     <PriceDisplay configObject={this.state.configObject} register={this.registerListenersToActivate}/>
                 </div>
                 <div className="form-row">
-                    <button type="button">Weiter</button>
+                    <Link to="/address">
+                        <button type="button">Weiter</button>
+                    </Link>
                 </div>
-            </form>
+            </div>
         )
     }
 

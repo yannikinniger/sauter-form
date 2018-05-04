@@ -1,5 +1,5 @@
 import React from 'react'
-import InputSelect from "../input-selection/input-select";
+import InputSelect from "../input-select/input-select";
 import DnKvsMap from '../../model/dn-kvs-map'
 
 export default class DnKvsSelection extends React.Component {
