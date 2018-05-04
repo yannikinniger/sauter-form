@@ -18,7 +18,7 @@ export const getArticleNumber = configuration => {
 
     const dnNumber = parseInt(dn.substr(2, dn.length), 10);
     if (dnNumber < 32) {
-        articleNumber += "\n/AKM105F120";
+        articleNumber += "/AKM105F120";
     } else {
         articleNumber += "/AKM115F120";
     }

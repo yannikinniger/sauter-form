@@ -4,8 +4,11 @@ export default class InputSelection extends React.Component {
 
     componentDidUpdate() {
         const selectValue = document.getElementById(this.props.name.toLowerCase()).value;
-        console.log(selectValue);
         this.props.model.setValue(this.props.modelProperty, selectValue);
+    }
+
+    handleChange(event) {
+        this.props.model.setValue(this.props.modelProperty, event.target.value);
     }
 
     render() {
@@ -15,7 +18,7 @@ export default class InputSelection extends React.Component {
         return (
             <div className="form-row">
                 <label>{this.props.name}</label>
-                <select id={this.props.name.toLowerCase()}>
+                <select id={this.props.name.toLowerCase()} onChange={this.handleChange.bind(this)}>
                     {options}
                 </select>
             </div>
