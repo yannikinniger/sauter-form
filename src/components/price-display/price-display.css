@@ -2,3 +2,7 @@
     width: 50%;
     display: inline-block;
 }
+
+.price-display {
+    margin-top: 30px;
+}

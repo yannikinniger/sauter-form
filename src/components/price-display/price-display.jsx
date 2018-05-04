@@ -1,5 +1,6 @@
 import React from 'react'
 import { PriceService } from "../../service/price-service";
+import { getArticleNumber } from '../../service/article-number-service';
 import './price-display.css'
 
 export default class PriceDisplay extends React.Component {
@@ -9,11 +10,15 @@ export default class PriceDisplay extends React.Component {
         this.state = {
             priceService: PriceService(this.props.configObject)
         };
+    }
+
+    activateListeners() {
         this.props.configObject.registerListener(newConfig => this.updatePrice(newConfig));
     }
 
     updatePrice(newConfig) {
         this.setState({price: this.state.priceService.getPrice()});
+        this.setState({product: getArticleNumber(newConfig)});
     }
 
     render() {
@@ -22,7 +27,8 @@ export default class PriceDisplay extends React.Component {
                 { this.state.price ?
                     <div>
                         <div>
-                            <label>Product</label>
+                            <label>Produkt</label>
+                            <label>{this.state.product}</label>
                         </div>
                         <div>
                             <label>Preis</label>
