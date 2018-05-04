@@ -9,23 +9,23 @@ export default class DnKvsSelection extends React.Component {
 
     constructor(props) {
         super(props);
-        this.kvsMapping = DnKvsMap.getDnKvsMap(2);
+        this.kvsMapping = DnKvsMap.getDnKvsMap('2');
         this.state = {
             kvsOptions: this.kvsMapping.get(this.dnOptions[0])
         };
+
         this.dnChanged = this.dnChanged.bind(this);
         this.updateKvs = this.updateKvs.bind(this);
-    }
 
-    activateListeners() {
-        this.props.configObject.registerListener(newConfig => this.updateKvs(newConfig));
+        this.props.register(() => {
+            this.props.configObject.registerListener(newConfig => this.updateKvs(newConfig));
+        });
     }
 
     updateKvs(newConfig) {
         this.kvsMapping = DnKvsMap.getDnKvsMap(newConfig['valveAmount']);
         const newDn = newConfig['dn'];
         this.setState({ kvsOptions: this.kvsMapping.get(newDn) });
-        this.props.configObject.setKvs(newDn);
     }
 
     dnChanged(event) {

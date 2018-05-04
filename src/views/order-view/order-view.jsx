@@ -8,13 +8,20 @@ import PriceDisplay from "../../components/price-display/price-display";
 export default class OrderView extends React.Component {
 
     valveOptions = ["2-Weg", "3-Weg"];
+    listenersToActivate = [];
 
     constructor(props) {
         super(props);
         const configObject = Configuration();
         this.state = {
             configObject: configObject
-        }
+        };
+
+        this.registerListenersToActivate = this.registerListenersToActivate.bind(this);
+    }
+
+    registerListenersToActivate(callback) {
+        this.listenersToActivate.push(callback);
     }
 
     // to calculate price immediately
@@ -23,8 +30,9 @@ export default class OrderView extends React.Component {
         const kvs = document.getElementById('kvs').value;
         this.state.configObject.setDn(dn);
         this.state.configObject.setKvs(kvs);
-        this.state.configObject.setValveAmount(2);
-        this.refs.needsListener.activateListeners();
+        this.state.configObject.setValveAmount('2');
+        this.listenersToActivate.forEach(listener => listener())
+        this.state.configObject.notifiyListeners();
     }
 
     render() {
@@ -35,8 +43,8 @@ export default class OrderView extends React.Component {
                 <InputRadio name="Ventiltyp" options={this.valveOptions}
                             model={this.state.configObject}
                             modelProperty="valveAmount"/>
-                <DnKvsSelection configObject={this.state.configObject} ref="needsListener"/>
-                <PriceDisplay configObject={this.state.configObject}/>
+                <DnKvsSelection configObject={this.state.configObject} register={this.registerListenersToActivate}/>
+                <PriceDisplay configObject={this.state.configObject} register={this.registerListenersToActivate}/>
             </form>
         )
     }

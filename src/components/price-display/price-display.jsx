@@ -10,10 +10,9 @@ export default class PriceDisplay extends React.Component {
         this.state = {
             priceService: PriceService(this.props.configObject)
         };
-    }
-
-    activateListeners() {
-        this.props.configObject.registerListener(newConfig => this.updatePrice(newConfig));
+        this.props.register(() => {
+            this.props.configObject.registerListener(newConfig => this.updatePrice(newConfig));
+        });
     }
 
     updatePrice(newConfig) {

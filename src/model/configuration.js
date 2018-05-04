@@ -3,6 +3,7 @@ export const Configuration = () => {
         dn: null,
         valveAmount: null,
         kvs: null,
+        amount: 1
     };
     const listeners = [];
 
@@ -33,6 +34,7 @@ export const Configuration = () => {
                 data[key] = value;
                 notifyListeners();
             }
-        }
+        },
+        notifiyListeners: () => notifyListeners(),
     }
 };

@@ -2,15 +2,10 @@ import React from 'react';
 
 export default class InputSelection extends React.Component {
 
-    constructor(props) {
-        super(props);
-        this.updateModel = this.updateModel.bind(this);
-    }
-
-    updateModel(event) {
-        if (this.props.model !== undefined && this.props.modelProperty !== undefined) {
-            this.props.model.setValue(this.props.modelProperty, event.target.value);
-        }
+    componentDidUpdate() {
+        const selectValue = document.getElementById(this.props.name.toLowerCase()).value;
+        console.log(selectValue);
+        this.props.model.setValue(this.props.modelProperty, selectValue);
     }
 
     render() {
@@ -20,7 +15,7 @@ export default class InputSelection extends React.Component {
         return (
             <div className="form-row">
                 <label>{this.props.name}</label>
-                <select id={this.props.name.toLowerCase()} onChange={this.updateModel}>
+                <select id={this.props.name.toLowerCase()}>
                     {options}
                 </select>
             </div>
