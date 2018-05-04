@@ -6,3 +6,24 @@
 .price-display {
     margin-top: 30px;
 }
+
+.price-row {
+    margin-right: 10px;
+    display: inherit;
+    margin-bottom: 10px;
+}
+
+#article {
+    width: 100%;
+}
+
+#quantity {
+    width: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+i {
+    font-size: 24px;
+    color: #0d88d3;
+}
