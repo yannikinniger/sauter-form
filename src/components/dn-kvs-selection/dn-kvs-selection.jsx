@@ -40,9 +40,11 @@ export default class DnKvsSelection extends React.Component {
             <div>
                 <div className="form-row">
                     <label>Nennweite</label>
-                    <select id="dn" onChange={this.dnChanged}>
-                        {dnOptions}
-                    </select>
+                    <div className="selectdiv">
+                        <select id="dn" onChange={this.dnChanged}>
+                            {dnOptions}
+                        </select>
+                    </div>
                 </div>
                 <InputSelect name="KVS" options={this.state.kvsOptions}
                              model={this.props.configObject}

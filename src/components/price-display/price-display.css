@@ -13,8 +13,10 @@
 
 .price-row {
     margin-right: 10px;
-    display: inherit;
+    height: 36px;
     margin-bottom: 10px;
+    align-items: center;
+    display: flex;
 }
 
 #article {
@@ -31,7 +33,7 @@
 
 i {
     font-size: 20px;
-    color: #80cdf2;
+    color: #fee011;
     padding: 5px;
 }
 

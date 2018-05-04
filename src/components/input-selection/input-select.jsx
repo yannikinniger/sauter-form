@@ -19,9 +19,11 @@ export default class InputSelect extends React.Component {
         return (
             <div className="form-row">
                 <label>{this.props.name}</label>
-                <select id={this.props.name.toLowerCase()} onChange={this.handleChange.bind(this)}>
-                    {options}
-                </select>
+                <div className="selectdiv">
+                    <select id={this.props.name.toLowerCase()} onChange={this.handleChange.bind(this)}>
+                        {options}
+                    </select>
+                </div>
             </div>
         )
     }
