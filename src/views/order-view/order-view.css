@@ -33,6 +33,21 @@ form h2 {
     margin-top: 0;
 }
 
-#address-section {
-    margin-top: 40px;
+button {
+    padding: 10px;
+    background: #0d88d3;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    border: none;
+    width: 100%;
+    margin-top: 20px;
+}
+
+button:hover:active {
+    background: #10A4FF;
+}
+
+button:hover{
+    background: #0B70AD;
 }

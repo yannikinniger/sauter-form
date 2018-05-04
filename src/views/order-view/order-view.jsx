@@ -1,8 +1,7 @@
 import React from 'react';
-import InputRow from '../../components/input-row/input-row'
 import InputRadio from '../../components/input-radio/input-radio'
 import DnKvsSelection from '../../components/dn-kvs-selection/dn-kvs-selection'
-import { Configuration } from '../../model/configuration'
+import {Configuration} from '../../model/configuration'
 import PriceDisplay from "../../components/price-display/price-display";
 import './order-view.css'
 
@@ -15,7 +14,8 @@ export default class OrderView extends React.Component {
         super(props);
         const configObject = Configuration();
         this.state = {
-            configObject: configObject
+            configObject: configObject,
+            sameInvoiceAddress: true
         };
 
         this.registerListenersToActivate = this.registerListenersToActivate.bind(this);
@@ -47,15 +47,8 @@ export default class OrderView extends React.Component {
                     <DnKvsSelection configObject={this.state.configObject} register={this.registerListenersToActivate}/>
                     <PriceDisplay configObject={this.state.configObject} register={this.registerListenersToActivate}/>
                 </div>
-                <div id="address-section">
-                    <h2>Lieferadresse</h2>
-                    <InputRow name="Firma" />
-                    <InputRow name="Projekt" />
-                    <InputRow name="Strasse" />
-                    <div className="twin-form-row">
-                        <InputRow name="Ort" />
-                        <InputRow name="Postleitzahl" />
-                    </div>
+                <div className="form-row">
+                    <button type="button">Weiter</button>
                 </div>
             </form>
         )

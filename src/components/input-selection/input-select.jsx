@@ -1,6 +1,7 @@
 import React from 'react';
+import './input-select.css';
 
-export default class InputSelection extends React.Component {
+export default class InputSelect extends React.Component {
 
     componentDidUpdate() {
         const selectValue = document.getElementById(this.props.name.toLowerCase()).value;

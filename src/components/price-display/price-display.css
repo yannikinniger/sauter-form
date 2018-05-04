@@ -7,6 +7,10 @@
     margin-top: 30px;
 }
 
+.price-display > h2 {
+    margin-bottom: 20px;
+}
+
 .price-row {
     margin-right: 10px;
     display: inherit;
@@ -15,6 +19,8 @@
 
 #article {
     width: 100%;
+    color: #0d88d3;
+    font-weight: bold;
 }
 
 #quantity {
@@ -25,7 +31,7 @@
 
 i {
     font-size: 20px;
-    color: #0d88d3;
+    color: #80cdf2;
     padding: 5px;
 }
 

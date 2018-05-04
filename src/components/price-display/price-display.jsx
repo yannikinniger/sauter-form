@@ -35,9 +35,10 @@ export default class PriceDisplay extends React.Component {
 
     render() {
         return (
-            <div className="price-display">
+            <div>
                 {this.state.price ?
-                    <div>
+                    <div className="price-display">
+                        <h2>Übersicht</h2>
                         <div className="price-row">
                             <label id="article">{this.state.product}</label>
                         </div>

@@ -1,5 +1,5 @@
 import React from 'react'
-import InputSelection from "../input-selection/input-selection";
+import InputSelect from "../input-selection/input-select";
 import DnKvsMap from '../../model/dn-kvs-map'
 
 export default class DnKvsSelection extends React.Component {
@@ -44,9 +44,9 @@ export default class DnKvsSelection extends React.Component {
                         {dnOptions}
                     </select>
                 </div>
-                <InputSelection name="KVS" options={this.state.kvsOptions}
-                                model={this.props.configObject}
-                                modelProperty="kvs"/>
+                <InputSelect name="KVS" options={this.state.kvsOptions}
+                             model={this.props.configObject}
+                             modelProperty="kvs"/>
             </div>
         )
     }
