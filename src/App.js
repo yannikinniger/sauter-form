@@ -3,6 +3,9 @@ import './App.css';
 import OrderView from './views/order-view/order-view.jsx';
 import {Route} from 'react-router-dom';
 import AddressView from "./views/address-view/address-view";
+import ItemProvider from "./model/ItemProvider";
+
+export const ItemContext = React.createContext();
 
 class App extends Component {
     render() {
@@ -12,10 +15,12 @@ class App extends Component {
                     <img src="/assets/logo.png" id="logo" alt="logo"/>
                 </header>
                 <div>
-                    <div id="content-container">
-                        <Route exact path="/" component={OrderView}/>
-                        <Route path="/address" component={AddressView}/>
-                    </div>
+                    <ItemProvider>
+                        <div id="content-container">
+                            <Route exact path="/" component={OrderView}/>
+                            <Route path="/address" component={AddressView}/>
+                        </div>
+                    </ItemProvider>
                 </div>
             </div>
         );

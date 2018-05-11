@@ -1,11 +1,11 @@
 import DnKvsMap from '../model/dn-kvs-map'
 
-export const getArticleNumber = configuration => {
-    const valveAmount = configuration.valveAmount;
-    const dn = configuration.dn;
+export const getArticleNumber = item => {
+    const valveAmount = item.valveAmount;
+    const dn = item.dn;
 
     const dnKvsMap = DnKvsMap.getDnKvsMap(valveAmount);
-    const position = dnKvsMap.get(dn).indexOf(configuration.kvs);
+    const position = dnKvsMap.get(dn).indexOf(item.kvs);
 
     let articleNumber = "";
     if (valveAmount === '2') {
