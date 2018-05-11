@@ -1,35 +1,13 @@
 import React from 'react'
 import InputSelect from "../input-select/InputSelect";
-import DnKvsMap from '../../model/DnKvsMap'
+import {ItemContext} from '../../App';
 
 export default class DnKvsSelection extends React.Component {
 
     dnOptions = ["DN15", "DN20", "DN25", "DN32", "DN40", "DN50"];
-    kvsMapping = [];
 
-    constructor(props) {
-        super(props);
-        this.kvsMapping = DnKvsMap.getDnKvsMap('2');
-        this.state = {
-            kvsOptions: this.kvsMapping.get(this.dnOptions[0])
-        };
-
-        this.dnChanged = this.dnChanged.bind(this);
-        this.updateKvs = this.updateKvs.bind(this);
-
-        this.props.register(() => {
-            this.props.configObject.registerListener(newConfig => this.updateKvs(newConfig));
-        });
-    }
-
-    updateKvs(newConfig) {
-        this.kvsMapping = DnKvsMap.getDnKvsMap(newConfig['valveAmount']);
-        const newDn = newConfig['dn'];
-        this.setState({ kvsOptions: this.kvsMapping.get(newDn) });
-    }
-
-    dnChanged(event) {
-        this.props.configObject.setDn(event.target.value);
+    dnChanged(event, context) {
+        context.updateItem('dn', event.target.value);
     }
 
     render() {
@@ -37,19 +15,24 @@ export default class DnKvsSelection extends React.Component {
             <option key={option} value={option}>{option}</option>
         );
         return (
-            <div>
-                <div className="form-row">
-                    <label>Nennweite</label>
-                    <div className="selectdiv">
-                        <select id="dn" onChange={this.dnChanged}>
-                            {dnOptions}
-                        </select>
-                    </div>
-                </div>
-                <InputSelect name="KVS" options={this.state.kvsOptions}
-                             model={this.props.configObject}
-                             modelProperty="kvs"/>
-            </div>
+            <ItemContext.Consumer>
+                {context => (
+                    <React.Fragment>
+                        <div className="form-row">
+                            <label>Nennweite</label>
+                            <div className="selectdiv">
+                                <select id="dn" onChange={(e) => this.dnChanged(e, context)}>
+                                    {dnOptions}
+                                </select>
+                            </div>
+                        </div>
+                        <InputSelect name="KVS" options={context.state.kvsOptions}
+                                     model={this.props.configObject}
+                                     updateCallback={value => context.updateItem('kvs', value)}
+                                     modelProperty="kvs"/>
+                    </React.Fragment>
+                )}
+            </ItemContext.Consumer>
         )
     }
 

@@ -7,7 +7,7 @@ import {ItemContext} from '../App'
 
 export default class ItemProvider extends React.Component {
     state = {
-        kvsOptions: DnKvsMap.getDnKvsMap(2),
+        kvsOptions: DnKvsMap.getDnKvsMap(2).get('DN15'),
         item: Item(),
         amount: 0,
     };
@@ -33,13 +33,15 @@ export default class ItemProvider extends React.Component {
                 saveCurrentItem: () => this.items.push(this.state.item),
                 getItems: () => this.items,
                 updateItem: (property, value) => {
+                    if (this.state.item[property] === value) { return; }
                     const newItem = Object.assign({}, this.state.item);
                     newItem[property] = value;
-                    newItem.articleNumber = getArticleNumber(this.state.item);
-                    newItem.price = PriceService.getPrice(this.state.item);
+                    newItem.articleNumber = getArticleNumber(newItem);
+                    newItem.price = PriceService.getPrice(newItem);
+
                     this.setState({
                         item: newItem,
-                        kvsOptions: DnKvsMap.getDnKvsMap(this.state.item.valveAmount).get(this.state.item.dn)
+                        kvsOptions: DnKvsMap.getDnKvsMap(newItem.valveAmount).get(newItem.dn)
                     });
                 },
                 increaseQuantity: () => {

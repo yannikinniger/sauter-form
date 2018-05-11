@@ -5,11 +5,11 @@ export default class InputSelect extends React.Component {
 
     componentDidUpdate() {
         const selectValue = document.getElementById(this.props.name.toLowerCase()).value;
-        this.props.model.setValue(this.props.modelProperty, selectValue);
+        this.props.updateCallback(selectValue);
     }
 
     handleChange(event) {
-        this.props.model.setValue(this.props.modelProperty, event.target.value);
+        this.props.updateCallback(event.target.value);
     }
 
     render() {

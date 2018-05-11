@@ -9,9 +9,7 @@ export default class InputRadio extends React.Component {
     }
 
     updateModel(event) {
-        if (this.props.model !== undefined && this.props.modelProperty !== undefined) {
-            this.props.model.setValue(this.props.modelProperty, event.target.value);
-        }
+        this.props.updateCallback(event.target.value);
     }
 
     render() {
