@@ -1,5 +1,5 @@
 import React from 'react'
-import './price-display.css'
+import './PriceDisplay.css'
 import { ItemContext } from '../../App'
 
 export default class PriceDisplay extends React.Component {

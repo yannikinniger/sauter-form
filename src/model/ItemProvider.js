@@ -1,7 +1,7 @@
 import React from 'react';
-import DnKvsMap from "./dn-kvs-map";
-import PriceService from "../service/price-service";
-import {getArticleNumber} from "../service/article-number-service";
+import DnKvsMap from "./DnKvsMap";
+import PriceService from "../service/PriceService";
+import {getArticleNumber} from "../service/ArticleNumberService";
 import {Item} from './Item'
 import {ItemContext} from '../App'
 

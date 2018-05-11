@@ -1,8 +1,8 @@
 import React from 'react';
-import InputRadio from '../../components/input-radio/input-radio'
-import DnKvsSelection from '../../components/dn-kvs-selection/dn-kvs-selection'
+import InputRadio from '../../components/input-radio/InputRadio'
+import DnKvsSelection from '../../components/dn-kvs-selection/DnKvsSelection'
 import {Configuration} from '../../model/configuration'
-import PriceDisplay from "../../components/price-display/price-display";
+import PriceDisplay from "../../components/price-display/PriceDisplay";
 import '../view.css'
 import { Link } from 'react-router-dom'
 

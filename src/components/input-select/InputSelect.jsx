@@ -1,5 +1,5 @@
 import React from 'react';
-import './input-select.css';
+import './InputSelect.css';
 
 export default class InputSelect extends React.Component {
 

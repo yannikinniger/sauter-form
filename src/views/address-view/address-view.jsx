@@ -1,5 +1,5 @@
 import React from 'react';
-import AddressSection from '../../components/address-section/address-section'
+import AddressSection from '../../components/address-section/AddressSection'
 import {Configuration} from '../../model/configuration'
 import '../view.css'
 

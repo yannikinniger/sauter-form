@@ -1,5 +1,5 @@
 import React from 'react';
-import './input-radio.css'
+import './InputRadio.css'
 
 export default class InputRadio extends React.Component {
 

@@ -1,4 +1,4 @@
-import DnKvsMap from '../model/dn-kvs-map'
+import DnKvsMap from '../model/DnKvsMap'
 
 export const getArticleNumber = item => {
     const valveAmount = item.valveAmount;
