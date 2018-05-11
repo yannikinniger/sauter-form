@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import './App.css';
-import OrderView from './views/order-view/order-view.jsx';
+import OrderView from './views/order-view/OrderView.jsx';
 import {Route} from 'react-router-dom';
-import AddressView from "./views/address-view/address-view";
+import AddressView from "./views/address-view/AddressView";
 import ItemProvider from "./model/ItemProvider";
 
 export const ItemContext = React.createContext();

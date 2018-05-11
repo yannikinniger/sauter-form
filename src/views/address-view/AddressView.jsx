@@ -1,15 +1,12 @@
 import React from 'react';
 import AddressSection from '../../components/address-section/AddressSection'
-import {Configuration} from '../../model/configuration'
 import '../view.css'
 
 export default class AddressView extends React.Component {
 
     constructor(props) {
         super(props);
-        const configObject = Configuration();
         this.state = {
-            configObject: configObject,
             sameInvoiceAddress: true
         };
     }
