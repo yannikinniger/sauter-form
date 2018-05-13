@@ -1,0 +1,4 @@
+.form-row > .error {
+    border: 2px solid #E53935;
+    color: #E53935;
+}

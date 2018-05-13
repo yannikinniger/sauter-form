@@ -5,6 +5,7 @@ import PriceDisplay from "../../components/price-display/PriceDisplay";
 import '../view.css'
 import {Link} from 'react-router-dom'
 import {ItemContext} from '../../App';
+import ItemProvider from "../../model/ItemProvider";
 
 export default class OrderView extends React.Component {
 
@@ -12,24 +13,26 @@ export default class OrderView extends React.Component {
 
     render() {
         return (
-            <div id="content">
-                <div id="product-section">
-                    <h2>Produkt</h2>
-                    <ItemContext.Consumer>
-                        {context => (
-                            <InputRadio name="Ventiltyp" options={this.valveOptions}
-                                        updateCallback={value => context.updateItem('valveAmount', value)}/>
-                        )}
-                    </ItemContext.Consumer>
-                    <DnKvsSelection/>
-                    <PriceDisplay/>
+            <ItemProvider>
+                <div id="content">
+                    <div id="product-section">
+                        <h2>Produkt</h2>
+                        <ItemContext.Consumer>
+                            {context => (
+                                <InputRadio name="Ventiltyp" options={this.valveOptions}
+                                            updateCallback={value => context.updateItem('valveAmount', value)}/>
+                            )}
+                        </ItemContext.Consumer>
+                        <DnKvsSelection/>
+                        <PriceDisplay/>
+                    </div>
+                    <div className="form-row">
+                        <Link to="/address">
+                            <button type="button">Weiter</button>
+                        </Link>
+                    </div>
                 </div>
-                <div className="form-row">
-                    <Link to="/address">
-                        <button type="button">Weiter</button>
-                    </Link>
-                </div>
-            </div>
+            </ItemProvider>
         )
     }
 
