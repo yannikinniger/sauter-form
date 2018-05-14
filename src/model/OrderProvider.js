@@ -10,24 +10,10 @@ export default class OrderProvider extends React.Component {
     state = {
         kvsOptions: DnKvsMap.getDnKvsMap(2).get('DN15'),
         item: Item(),
-        amount: 0,
         deliveryAddress: new EmptyAddress(),
         invoiceAddress: new EmptyAddress(),
     };
     items = [];
-
-    quantityUpdate(newQuantity) {
-        if (newQuantity > 0) {
-            const newPrice = PriceService.getPrice(this.state.item, newQuantity);
-            this.setState(prevState => ({
-                item: {
-                    ...prevState.item,
-                    quantity: newQuantity,
-                    price: newPrice
-                }
-            }));
-        }
-    }
 
     render() {
         return (
@@ -65,5 +51,19 @@ export default class OrderProvider extends React.Component {
                 {this.props.children}
             </OrderContext.Provider>
         )
-    };
+    }
+
+    quantityUpdate(newQuantity) {
+        if (newQuantity > 0) {
+            const newPrice = PriceService.getPrice(this.state.item, newQuantity);
+            this.setState(prevState => ({
+                item: {
+                    ...prevState.item,
+                    quantity: newQuantity,
+                    price: newPrice
+                }
+            }));
+        }
+    }
+
 }
