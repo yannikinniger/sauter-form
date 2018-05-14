@@ -35,6 +35,11 @@ class AddressView extends React.Component {
         }
     }
 
+    handleBack() {
+        this.context.clearItems();
+        this.props.history.push('/');
+    }
+
     render() {
         return (
             <React.Fragment>
@@ -57,7 +62,7 @@ class AddressView extends React.Component {
                         <AddressSection title="Rechnungsadresse" formName="invoiceAddress"/>
                     }
                     <div className="twin-button-row">
-                        <button onClick={() => this.props.history.push('/')}>Zurück</button>
+                        <button onClick={this.handleBack.bind(this)}>Zurück</button>
                         <button onClick={this.handleSubmit.bind(this)}>Weiter</button>
                     </div>
                 </div>

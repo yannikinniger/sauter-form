@@ -21,6 +21,7 @@ export default class OrderProvider extends React.Component {
                 state: this.state,
                 saveCurrentItem: () => this.items.push(this.state.item),
                 getItems: () => this.items,
+                clearItems: () => this.items = [],
                 updateItem: (property, value) => {
                     if (this.state.item[property] === value) { return; }
                     const newItem = Object.assign({}, this.state.item);
