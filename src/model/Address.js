@@ -23,6 +23,6 @@ export class Address {
 
 export class EmptyAddress {
     getAddress() {
-        return {};
+        return null;
     }
 }

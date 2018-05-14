@@ -52,7 +52,7 @@ export default class OrderProvider extends React.Component {
                         this.setState({[name]: address})
                     }
                 },
-                getAddress: name => this.state[name],
+                getAddress: name => this.state[name].getAddress(),
                 increaseQuantity: () => {
                     const newQuantity = this.state.item.quantity + 1;
                     this.quantityUpdate(newQuantity)

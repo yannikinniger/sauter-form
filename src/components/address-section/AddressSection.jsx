@@ -8,12 +8,6 @@ import { withRouter } from 'react-router-dom'
 
 class AddressSection extends React.Component {
 
-    constructor(props) {
-        super(props);
-        this.handleSubmit = this.handleSubmit.bind(this);
-    }
-
-
     handleSubmit(event) {
         event.preventDefault();
         console.log(this.context.state);
@@ -43,7 +37,7 @@ class AddressSection extends React.Component {
                     {context => {this.context = context}}
                 </OrderContext.Consumer>
                 <h2>{this.props.title}</h2>
-                <form onSubmit={this.handleSubmit} className={this.props.formName}>
+                <form onSubmit={this.handleSubmit.bind(this)} className={this.props.formName}>
                     <InputRow title="Firma" name="company"/>
                     <InputRow title="Projekt" name="project"/>
                     <InputRow title="Strasse" name="street"/>
