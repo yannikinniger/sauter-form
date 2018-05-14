@@ -1,0 +1,26 @@
+#success-message {
+    position: fixed;
+    text-align: center;
+    width: 30em;
+    top: 200px;
+    height: 80px;
+    background-color: chartreuse;
+    display: flex;
+    justify-content: center;
+    -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+    -moz-animation: fadein 2s; /* Firefox < 16 */
+    -ms-animation: fadein 2s; /* Internet Explorer */
+    -o-animation: fadein 2s; /* Opera < 12.1 */
+    animation: fadein 2s;
+}
+
+#success-message > p {
+    align-self: center;
+}
+
+@media only screen and (max-width: 600px) {
+    #success-message {
+        top: 90px;
+        width: 20em;
+    }
+}
