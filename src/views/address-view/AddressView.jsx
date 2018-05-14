@@ -1,24 +1,42 @@
 import React from 'react';
 import AddressSection from '../../components/address-section/AddressSection'
 import '../view.css'
+import {Address} from "../../model/Address";
+import formExtract from "form-extract";
+import {OrderContext} from "../../App";
+import { withRouter } from 'react-router-dom'
 
-export default class AddressView extends React.Component {
+class AddressView extends React.Component {
 
     constructor(props) {
         super(props);
         this.state = {
             sameInvoiceAddress: true
         };
+        this.saveForm.bind(this);
+        this.handleFormError.bind(this);
     }
 
     handleInvoiceAddressChange(event) {
         this.setState({sameInvoiceAddress: event.target.checked})
     }
 
+    handleSubmit(event) {
+        event.preventDefault();
+        this.saveForm('deliveryAddress');
+        if (!this.state.sameInvoiceAddress) {
+            this.saveForm('invoiceAddress');
+        }
+        this.props.history.push('/checkout');
+    }
+
     render() {
         return (
             <React.Fragment>
                 <div id="content">
+                    <OrderContext.Consumer>
+                        {context => {this.context = context}}
+                    </OrderContext.Consumer>
                     <AddressSection title="Lieferadresse" formName="deliveryAddress"/>
                     <div className="form-row">
                     <span>
@@ -33,11 +51,35 @@ export default class AddressView extends React.Component {
                     }
                     <div className="twin-button-row">
                         <button onClick={() => this.props.history.push('/')}>Zurück</button>
-                        <button onClick={() => this.props.history.push('/checkout')}>Weiter</button>
+                        <button onClick={this.handleSubmit.bind(this)}>Weiter</button>
                     </div>
                 </div>
             </React.Fragment>
         )
     }
 
+    saveForm(name) {
+        const formData = formExtract(`.${name}`);
+        try {
+            const address = new Address(formData);
+            this.context.setAddress(name, address);
+        } catch (error) {
+            this.handleFormError(formData);
+        }
+    }
+
+    handleFormError(formData) {
+        Object.entries(formData)
+            .filter(([key, value]) => value === '')
+            .forEach(([key, value]) => {
+                const elements = document.getElementsByName(key);
+                elements.forEach(element => {
+                    element.classList.add('error');
+                    element.placeholder = "Benötigt";
+                })
+            })
+    }
+
 }
+
+export default withRouter(AddressView);
