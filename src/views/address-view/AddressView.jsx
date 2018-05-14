@@ -4,14 +4,16 @@ import '../view.css'
 import {Address} from "../../model/Address";
 import formExtract from "form-extract";
 import {OrderContext} from "../../App";
-import { withRouter } from 'react-router-dom'
+import {withRouter} from 'react-router-dom'
 
 class AddressView extends React.Component {
+
+    hasError = false;
 
     constructor(props) {
         super(props);
         this.state = {
-            sameInvoiceAddress: true
+            sameInvoiceAddress: true,
         };
         this.saveForm.bind(this);
         this.handleFormError.bind(this);
@@ -23,11 +25,14 @@ class AddressView extends React.Component {
 
     handleSubmit(event) {
         event.preventDefault();
+        this.hasError = false;
         this.saveForm('deliveryAddress');
         if (!this.state.sameInvoiceAddress) {
             this.saveForm('invoiceAddress');
         }
-        this.props.history.push('/checkout');
+        if (!this.hasError) {
+            this.props.history.push('/checkout');
+        }
     }
 
     render() {
@@ -35,7 +40,9 @@ class AddressView extends React.Component {
             <React.Fragment>
                 <div id="content">
                     <OrderContext.Consumer>
-                        {context => {this.context = context}}
+                        {context => {
+                            this.context = context
+                        }}
                     </OrderContext.Consumer>
                     <AddressSection title="Lieferadresse" formName="deliveryAddress"/>
                     <div className="form-row">
@@ -47,7 +54,7 @@ class AddressView extends React.Component {
                     {this.state.sameInvoiceAddress ?
                         <div/>
                         :
-                        <AddressSection title="Rechnungsadresse" formName="invoiceAddress" />
+                        <AddressSection title="Rechnungsadresse" formName="invoiceAddress"/>
                     }
                     <div className="twin-button-row">
                         <button onClick={() => this.props.history.push('/')}>Zurück</button>
@@ -69,6 +76,7 @@ class AddressView extends React.Component {
     }
 
     handleFormError(formData) {
+        this.hasError = true;
         Object.entries(formData)
             .filter(([key, value]) => value === '')
             .forEach(([key, value]) => {

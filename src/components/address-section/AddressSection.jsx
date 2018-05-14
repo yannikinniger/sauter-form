@@ -1,6 +1,5 @@
 import React from 'react';
 import InputRow from '../input/input-row/InputRow'
-import './AddressSection.css'
 
 export default class AddressSection extends React.Component {
 

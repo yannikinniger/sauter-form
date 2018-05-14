@@ -28,6 +28,7 @@
 }
 
 .twin-button-row > :first-child {
+    background-color: #999;
     margin-right: 10px;
 }
 
@@ -40,7 +41,13 @@
     flex-direction: column;
     justify-content: flex-start;
     text-align: start;
-    width: 20em;
+    width: 30em;
+}
+
+@media only screen and (max-width: 600px) {
+    #content {
+        width: 20em;
+    }
 }
 
 #content h2 {

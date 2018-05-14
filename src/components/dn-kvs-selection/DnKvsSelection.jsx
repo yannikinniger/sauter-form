@@ -6,7 +6,7 @@ export default class DnKvsSelection extends React.Component {
 
     dnOptions = ["DN15", "DN20", "DN25", "DN32", "DN40", "DN50"];
 
-    dnChanged(event, context) {
+    static dnChanged(event, context) {
         context.updateItem('dn', event.target.value);
     }
 
