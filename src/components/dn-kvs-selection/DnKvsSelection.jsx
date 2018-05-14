@@ -21,15 +21,13 @@ export default class DnKvsSelection extends React.Component {
                         <div className="form-row">
                             <label>Nennweite</label>
                             <div className="selectdiv">
-                                <select id="dn" onChange={(e) => this.dnChanged(e, context)}>
+                                <select id="dn" onChange={(e) => DnKvsSelection.dnChanged(e, context)}>
                                     {dnOptions}
                                 </select>
                             </div>
                         </div>
                         <InputSelect name="KVS" options={context.state.kvsOptions}
-                                     model={this.props.configObject}
-                                     updateCallback={value => context.updateItem('kvs', value)}
-                                     modelProperty="kvs"/>
+                                     updateCallback={value => context.updateItem('kvs', value)} />
                     </React.Fragment>
                 )}
             </OrderContext.Consumer>
