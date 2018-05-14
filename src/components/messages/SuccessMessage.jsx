@@ -11,7 +11,6 @@ export default class SuccessMessage extends React.Component {
     componentWillReceiveProps(nextProps) {
         if (nextProps.visible) {
             this.setState({visible: true});
-            setTimeout(() => this.setState({visible: false}), 10000);
         } else {
             this.setState({visible: false})
         }

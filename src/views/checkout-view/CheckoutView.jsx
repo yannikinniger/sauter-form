@@ -20,7 +20,6 @@ class CheckoutView extends React.Component {
         if (invoiceAddress === null) {
             invoiceAddress = deliveryAddress;
         }
-        console.log(invoiceAddress);
         const orderSuccessful = sendMail(orderContext.getItems(), deliveryAddress, invoiceAddress);
         this.setState({displaySuccess: orderSuccessful});
     }
