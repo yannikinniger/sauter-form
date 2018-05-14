@@ -3,9 +3,10 @@ import './App.css';
 import OrderView from './views/order-view/OrderView.jsx';
 import {Route} from 'react-router-dom';
 import AddressView from "./views/address-view/AddressView";
+import CheckoutView from "./views/checkout-view/CheckoutView";
+import OrderProvider from './model/OrderProvider';
 
-export const ItemContext = React.createContext();
-export const AddressContext = React.createContext();
+export const OrderContext = React.createContext();
 
 class App extends Component {
     render() {
@@ -16,8 +17,11 @@ class App extends Component {
                 </header>
                 <div>
                     <div id="content-container">
-                        <Route exact path="/" component={OrderView}/>
-                        <Route path="/address" component={AddressView}/>
+                        <OrderProvider>
+                            <Route exact path="/" component={OrderView}/>
+                            <Route path="/address" component={AddressView}/>
+                            <Route path="/checkout" component={CheckoutView}/>
+                        </OrderProvider>
                     </div>
                 </div>
             </div>
