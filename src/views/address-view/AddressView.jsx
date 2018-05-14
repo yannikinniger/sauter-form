@@ -1,7 +1,6 @@
 import React from 'react';
 import AddressSection from '../../components/address-section/AddressSection'
 import '../view.css'
-import AddressProvider from "../../model/AddressProvider";
 
 export default class AddressView extends React.Component {
 
@@ -16,14 +15,9 @@ export default class AddressView extends React.Component {
         this.setState({sameInvoiceAddress: event.target.checked})
     }
 
-    handleContinue() {
-
-        this.props.history.push('/checkout')
-    }
-
     render() {
         return (
-            <AddressProvider>
+            <React.Fragment>
                 <div id="content">
                     <AddressSection title="Lieferadresse" formName="deliveryAddress"/>
                     <div className="form-row">
@@ -35,14 +29,14 @@ export default class AddressView extends React.Component {
                     {this.state.sameInvoiceAddress ?
                         <div/>
                         :
-                        <AddressSection title="Rechnungsadresse" formName="invoiceAddress"/>
+                        <AddressSection title="Rechnungsadresse" formName="invoiceAddress" />
                     }
                     <div className="twin-button-row">
                         <button onClick={() => this.props.history.push('/')}>Zurück</button>
                         <button onClick={() => this.props.history.push('/checkout')}>Weiter</button>
                     </div>
                 </div>
-            </AddressProvider>
+            </React.Fragment>
         )
     }
 

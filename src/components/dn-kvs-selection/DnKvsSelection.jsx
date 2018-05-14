@@ -1,6 +1,6 @@
 import React from 'react'
 import InputSelect from "../input-select/InputSelect";
-import {ItemContext} from '../../App';
+import {OrderContext} from '../../App';
 
 export default class DnKvsSelection extends React.Component {
 
@@ -15,7 +15,7 @@ export default class DnKvsSelection extends React.Component {
             <option key={option} value={option}>{option}</option>
         );
         return (
-            <ItemContext.Consumer>
+            <OrderContext.Consumer>
                 {context => (
                     <React.Fragment>
                         <div className="form-row">
@@ -32,7 +32,7 @@ export default class DnKvsSelection extends React.Component {
                                      modelProperty="kvs"/>
                     </React.Fragment>
                 )}
-            </ItemContext.Consumer>
+            </OrderContext.Consumer>
         )
     }
 

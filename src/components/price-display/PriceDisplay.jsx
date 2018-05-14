@@ -1,6 +1,6 @@
 import React from 'react'
 import './PriceDisplay.css'
-import { ItemContext } from '../../App'
+import { OrderContext } from '../../App'
 
 export default class PriceDisplay extends React.Component {
 
@@ -9,7 +9,7 @@ export default class PriceDisplay extends React.Component {
             <React.Fragment>
                 <div className="price-display">
                     <h2>Übersicht</h2>
-                    <ItemContext.Consumer>
+                    <OrderContext.Consumer>
                         {context => (
                             <React.Fragment>
                                 <div className="price-row">
@@ -29,7 +29,7 @@ export default class PriceDisplay extends React.Component {
                                 </div>
                             </React.Fragment>
                         )}
-                    </ItemContext.Consumer>
+                    </OrderContext.Consumer>
                 </div>
             </React.Fragment>
         )

@@ -3,13 +3,16 @@ import DnKvsMap from "./DnKvsMap";
 import PriceService from "../service/PriceService";
 import {getArticleNumber} from "../service/ArticleNumberService";
 import {Item} from './Item'
-import {ItemContext} from '../App'
+import {OrderContext} from '../App'
+import {Address, EmptyAddress} from "./Address";
 
-export default class ItemProvider extends React.Component {
+export default class OrderProvider extends React.Component {
     state = {
         kvsOptions: DnKvsMap.getDnKvsMap(2).get('DN15'),
         item: Item(),
         amount: 0,
+        deliveryAddress: new EmptyAddress(),
+        invoiceAddress: new EmptyAddress(),
     };
     items = [];
 
@@ -28,7 +31,7 @@ export default class ItemProvider extends React.Component {
 
     render() {
         return (
-            <ItemContext.Provider value={{
+            <OrderContext.Provider value={{
                 state: this.state,
                 saveCurrentItem: () => this.items.push(this.state.item),
                 getItems: () => this.items,
@@ -44,6 +47,12 @@ export default class ItemProvider extends React.Component {
                         kvsOptions: DnKvsMap.getDnKvsMap(newItem.valveAmount).get(newItem.dn)
                     });
                 },
+                setAddress: (name, address) => {
+                    if (address instanceof Address) {
+                        this.setState({[name]: address})
+                    }
+                },
+                getAddress: name => this.state[name],
                 increaseQuantity: () => {
                     const newQuantity = this.state.item.quantity + 1;
                     this.quantityUpdate(newQuantity)
@@ -54,7 +63,7 @@ export default class ItemProvider extends React.Component {
                 },
             }}>
                 {this.props.children}
-            </ItemContext.Provider>
+            </OrderContext.Provider>
         )
-    }
+    };
 }

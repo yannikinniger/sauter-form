@@ -1,24 +1,28 @@
 import React from 'react';
 import InputRow from '../input-row/InputRow'
 import './AddressSection.css'
-import {AddressContext} from '../../App';
+import {OrderContext} from '../../App';
 import formExtract from 'form-extract'
 import {Address} from "../../model/Address";
+import { withRouter } from 'react-router-dom'
 
-export default class AddressSection extends React.Component {
+class AddressSection extends React.Component {
 
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
 
     handleSubmit(event) {
         event.preventDefault();
+        console.log(this.context.state);
         const formData = formExtract(`.${this.props.formName}`);
         try {
             const address = new Address(formData);
             this.context.setAddress(this.props.formName, address);
+            console.log(this.context.state);
+            this.props.history.push('/checkout');
         } catch (error) {
             Object.entries(formData)
                 .filter(([key, value]) => value === '')
@@ -35,9 +39,9 @@ export default class AddressSection extends React.Component {
     render() {
         return (
             <div className="address-section">
-                <AddressContext.Consumer>
+                <OrderContext.Consumer>
                     {context => {this.context = context}}
-                </AddressContext.Consumer>
+                </OrderContext.Consumer>
                 <h2>{this.props.title}</h2>
                 <form onSubmit={this.handleSubmit} className={this.props.formName}>
                     <InputRow title="Firma" name="company"/>
@@ -55,3 +59,5 @@ export default class AddressSection extends React.Component {
     }
 
 }
+
+export default withRouter(AddressSection);

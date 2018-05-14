@@ -4,8 +4,7 @@ import DnKvsSelection from '../../components/dn-kvs-selection/DnKvsSelection'
 import PriceDisplay from "../../components/price-display/PriceDisplay";
 import '../view.css'
 import {Link} from 'react-router-dom'
-import {ItemContext} from '../../App';
-import ItemProvider from "../../model/ItemProvider";
+import {OrderContext} from '../../App';
 
 export default class OrderView extends React.Component {
 
@@ -13,26 +12,24 @@ export default class OrderView extends React.Component {
 
     render() {
         return (
-            <ItemProvider>
-                <div id="content">
-                    <div id="product-section">
-                        <h2>Produkt</h2>
-                        <ItemContext.Consumer>
-                            {context => (
-                                <InputRadio name="Ventiltyp" options={this.valveOptions}
-                                            updateCallback={value => context.updateItem('valveAmount', value)}/>
-                            )}
-                        </ItemContext.Consumer>
-                        <DnKvsSelection/>
-                        <PriceDisplay/>
-                    </div>
-                    <div className="form-row">
-                        <Link to="/address">
-                            <button type="button">Weiter</button>
-                        </Link>
-                    </div>
+            <div id="content">
+                <div id="product-section">
+                    <h2>Produkt</h2>
+                    <OrderContext.Consumer>
+                        {context => (
+                            <InputRadio name="Ventiltyp" options={this.valveOptions}
+                                        updateCallback={value => context.updateItem('valveAmount', value)}/>
+                        )}
+                    </OrderContext.Consumer>
+                    <DnKvsSelection/>
+                    <PriceDisplay/>
                 </div>
-            </ItemProvider>
+                <div className="form-row">
+                    <Link to="/address">
+                        <button type="button">Weiter</button>
+                    </Link>
+                </div>
+            </div>
         )
     }
 
