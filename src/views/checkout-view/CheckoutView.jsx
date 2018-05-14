@@ -2,8 +2,10 @@ import React from 'react';
 import '../view.css'
 import {OrderContext} from '../../App'
 import sendMail from '../../service/EmailService';
+import OrderDisplay from "../../components/order-display/OrderDisplay";
+import { withRouter } from 'react-router-dom'
 
-export default class AddressView extends React.Component {
+class CheckoutView extends React.Component {
 
     static handleCheckout(orderContext) {
         const deliveryAddress = orderContext.getAddress('deliveryAddress');
@@ -15,12 +17,20 @@ export default class AddressView extends React.Component {
         sendMail(orderContext.getItems(), deliveryAddress, invoiceAddress);
     }
 
+    componentDidCatch() {
+        window.location.href = '/';
+    }
+
     render() {
         return (
             <div id="content">
+                <OrderDisplay/>
                 <OrderContext>
                     {context => (
-                        <button onClick={() => AddressView.handleCheckout(context)}>Bestellen</button>
+                        <div className="twin-button-row">
+                            <button onClick={() => this.props.history.push('/address')}>Zurück</button>
+                            <button onClick={() => CheckoutView.handleCheckout(context)}>Bestellen</button>
+                        </div>
                     )}
                 </OrderContext>
             </div>
@@ -28,3 +38,5 @@ export default class AddressView extends React.Component {
     }
 
 }
+
+export default withRouter(CheckoutView);

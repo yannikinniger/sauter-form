@@ -1,0 +1,27 @@
+.order-display-section {
+    padding-bottom: 20px;
+}
+
+.order-display-section td:nth-child(1) {
+    padding-left: 0;
+}
+
+.order-display-section td:nth-child(2) {
+    padding-left: 15px;
+}
+
+.order-display-section td {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.order-display-section label {
+    display: inline-block;
+    margin: 20px 0 10px 0;
+    color: #0d88d3;
+    font-weight: bold;
+}
+
+.order-display-section .quantity {
+    padding-right: 15px;
+}
