@@ -1,5 +1,5 @@
 import React from 'react';
-import InputRadio from '../../components/input-radio/InputRadio'
+import InputRadio from '../../components/input/input-radio/InputRadio'
 import DnKvsSelection from '../../components/dn-kvs-selection/DnKvsSelection'
 import PriceDisplay from "../../components/price-display/PriceDisplay";
 import '../view.css'

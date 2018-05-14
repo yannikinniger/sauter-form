@@ -1,5 +1,5 @@
 import React from 'react'
-import InputSelect from "../input-select/InputSelect";
+import InputSelect from "../input/input-select/InputSelect";
 import {OrderContext} from '../../App';
 
 export default class DnKvsSelection extends React.Component {
