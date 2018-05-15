@@ -11,7 +11,8 @@ export default class InputRow extends React.Component {
         return (
             <div className="form-row">
                 <label>{this.props.title}</label>
-                <input type="text" name={this.props.name.toLowerCase()} onChange={InputRow.handleChange}/>
+                <input type="text" name={this.props.name.toLowerCase()}
+                       onChange={InputRow.handleChange} defaultValue={this.props.value}/>
             </div>
         )
     }

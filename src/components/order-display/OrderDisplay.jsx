@@ -1,6 +1,7 @@
 import React from 'react'
 import {OrderContext} from '../../App';
 import './OrderDisplay.css';
+import ArticleRow from "../article-row/ArticleRow";
 
 export default class OrderDisplay extends React.Component {
 
@@ -10,7 +11,7 @@ export default class OrderDisplay extends React.Component {
                 {context => (
                     <React.Fragment>
                         <AddressDisplay name="Lieferadresse" address={context.getAddress('deliveryAddress')}/>
-                        <ItemDisplay items={context.getItems()}/>
+                        <ItemDisplay item={context.getItem()}/>
                     </React.Fragment>
                 )}
             </OrderContext.Consumer>
@@ -44,43 +45,33 @@ function AddressDisplay(props) {
 }
 
 function ItemDisplay(props) {
-    const items = props.items.map(item =>
-        <div key={item.articleNumber} className="order-display-section">
-            <h2>Artikel</h2>
-            <div>
-                <label><span className="quantity">{item.quantity}x</span>Aussenfühler EGT301F102</label>
-            </div>
-            <div>
-                <label><span className="quantity">{item.quantity}x</span>VL-Anlegefühler EGT311F102</label>
-            </div>
-            <div>
-                <label><span className="quantity">{item.quantity}x</span>{item.articleNumber}</label>
-            </div>
+    return (
+        <div key={props.item.articleNumber} className="order-display-section">
+            <h2>Übersicht</h2>
+            <ArticleRow description="Aussenfühler EGT301F102" quantity={props.item.quantity}/>
+            <ArticleRow description="VL-Anlegefühler EGT311F102" quantity={props.item.quantity}/>
+            <ArticleRow description="Normschema" quantity={props.item.quantity}/>
+            <ArticleRow description={props.item.articleNumber} quantity={props.item.quantity}/>
             <table>
                 <tbody>
                 <tr>
                     <td>Ventiltyp</td>
-                    <td>{item.valveAmount}-Weg</td>
+                    <td>{props.item.valveAmount}-Weg</td>
                 </tr>
                 <tr>
                     <td>DN</td>
-                    <td>{item.dn}</td>
+                    <td>{props.item.dn}</td>
                 </tr>
                 <tr>
                     <td>KVS</td>
-                    <td>{item.kvs}</td>
+                    <td>{props.item.kvs}</td>
                 </tr>
                 <tr>
                     <td>Preis</td>
-                    <td>{item.price}</td>
+                    <td>{props.item.price}</td>
                 </tr>
                 </tbody>
             </table>
         </div>
-    );
-    return (
-        <React.Fragment>
-            {items}
-        </React.Fragment>
     )
 }

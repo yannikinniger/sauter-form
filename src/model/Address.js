@@ -1,6 +1,6 @@
 export class Address {
 
-    requiredProperties = ['company', 'street', 'city', 'zipcode', 'email'];
+    requiredProperties = ['company', 'street', 'city', 'zipcode'];
 
     constructor(addressObject) {
         const hasRequiredProperties = this.requiredProperties.every(

@@ -9,7 +9,7 @@ export default class PriceDisplay extends React.Component {
         return (
             <React.Fragment>
                 <div className="price-display">
-                    <h2>Übersicht</h2>
+                    <h2>Artikel</h2>
                     <OrderContext.Consumer>
                         {context => (
                             <React.Fragment>
@@ -28,7 +28,7 @@ export default class PriceDisplay extends React.Component {
                                 </div>
                                 <div className="price-row">
                                     <label>Preis</label>
-                                    <label>{context.state.item.price}.00</label>
+                                    <label>{context.state.item.price}.00 netto exkl. MwSt</label>
                                 </div>
                             </React.Fragment>
                         )}
