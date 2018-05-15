@@ -1,6 +1,7 @@
 .form-row {
     padding-top: 10px;
     padding-bottom: 10px;
+    flex-grow: 1;
 }
 
 .form-row > label {
@@ -25,6 +26,11 @@
 .twin-form-row, .twin-button-row {
     display: flex;
     justify-content: space-between;
+}
+
+.twin-form-row > :first-child {
+    padding-right: 10px;
+    margin-right: 10px;
 }
 
 .twin-button-row > :first-child {
