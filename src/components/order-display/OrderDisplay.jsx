@@ -47,7 +47,15 @@ function ItemDisplay(props) {
     const items = props.items.map(item =>
         <div key={item.articleNumber} className="order-display-section">
             <h2>Artikel</h2>
-            <label><span className="quantity">{item.quantity}x</span>{item.articleNumber}</label>
+            <div>
+                <label><span className="quantity">{item.quantity}x</span>Aussenfühler EGT301F102</label>
+            </div>
+            <div>
+                <label><span className="quantity">{item.quantity}x</span>VL-Anlegefühler EGT311F102</label>
+            </div>
+            <div>
+                <label><span className="quantity">{item.quantity}x</span>{item.articleNumber}</label>
+            </div>
             <table>
                 <tbody>
                 <tr>
@@ -63,11 +71,7 @@ function ItemDisplay(props) {
                     <td>{item.kvs}</td>
                 </tr>
                 <tr>
-                    <td>Anzahl</td>
-                    <td>{item.quantity}</td>
-                </tr>
-                <tr>
-                    <td>Gesamtpreis</td>
+                    <td>Preis</td>
                     <td>{item.price}</td>
                 </tr>
                 </tbody>
