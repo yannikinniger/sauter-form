@@ -49,6 +49,8 @@ button {
     border: none;
     width: 100%;
     margin-top: 20px;
+    font-family: Futura;
+    font-size: 14px;
 }
 
 button:hover:active {

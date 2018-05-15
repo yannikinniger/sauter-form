@@ -19,12 +19,6 @@
     display: flex;
 }
 
-#article {
-    width: 100%;
-    color: #0d88d3;
-    font-weight: bold;
-}
-
 #quantity {
     width: auto;
     padding-left: 15px;

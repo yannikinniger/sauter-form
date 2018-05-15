@@ -1,0 +1,9 @@
+.article {
+    width: 100% !important;
+    color: #0d88d3;
+    font-weight: bold;
+}
+
+.quantityDisplay {
+    padding-right: 5px;
+}
