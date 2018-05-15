@@ -1,23 +1,88 @@
-header {
+#product-view header {
     position: relative;
-    height: 300px;
-    background-image: linear-gradient(#ff9d2f, #ff6126);
+    height: 500px;
+    background-color: #0d88d3;
 }
 
-h1 {
-    padding: 100px 0;
-    font: 44px "Arial";
+#product-view h1 {
+    font: 36px "Futura";
     text-align: center;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
-header h1 {
+#product-view header h1 {
     color: white;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    top: 80px;
 }
 
-svg {
+#product-img {
+    position: absolute;
+    width: 300px;
+    top: 150px;
+    left: 0;
+    right: 0;
+}
+
+#product-view svg {
     position: absolute;
     bottom: 0;
-    width: 100%;
+    width: 80%;
     height: 10vw;
+    right: 0;
     /* set height to pixels if you want angle to change with screen width */
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+}
+
+#product-view main {
+    display: flex;
+    justify-content: center;
+}
+
+#product-view .content {
+    width: 40em;
+    text-align: left;
+}
+
+#product-view h2 {
+    margin-bottom: 40px;
+}
+
+#product-view li {
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+#product-view ul {
+    padding-left: 20px;
+    margin-top: 0;
+}
+
+#product-view img {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.order-now-button {
+    width: 150px;
+    background-color: #fbd80d;
+    margin-left: auto;
+    margin-top: 0;
+}
+
+.order-now-button:hover {
+    background-color: #BBA10A;
+}
+
+.order-now-button:hover:active {
+    background-color: #FFE10D;
 }
