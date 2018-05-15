@@ -31,13 +31,13 @@ class AddressView extends React.Component {
             this.saveForm('invoiceAddress');
         }
         if (!this.hasError) {
-            this.props.history.push('/checkout');
+            this.props.history.push('/order/checkout');
         }
     }
 
     handleBack() {
         this.context.clearItems();
-        this.props.history.push('/');
+        this.props.history.push('/order');
     }
 
     render() {

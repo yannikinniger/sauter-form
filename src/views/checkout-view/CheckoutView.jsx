@@ -25,7 +25,7 @@ class CheckoutView extends React.Component {
     }
 
     componentDidCatch() {
-        window.location.href = '/';
+        window.location.href = '/order';
     }
 
     render() {

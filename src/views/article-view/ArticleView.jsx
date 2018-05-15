@@ -5,13 +5,13 @@ import PriceDisplay from "../../components/price-display/PriceDisplay";
 import '../view.css'
 import {OrderContext} from '../../App';
 
-export default class OrderView extends React.Component {
+export default class ArticleView extends React.Component {
 
     valveOptions = ["2-Weg", "3-Weg"];
 
     handleSubmit() {
         this.context.saveCurrentItem();
-        this.props.history.push('/address')
+        this.props.history.push('/order/address')
     }
 
     render() {
