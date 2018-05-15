@@ -36,7 +36,7 @@ class CheckoutView extends React.Component {
                 <OrderContext>
                     {context => (
                         <div className="twin-button-row">
-                            <button onClick={() => this.props.history.push('/address')}>Zurück</button>
+                            <button onClick={() => this.props.history.push('/order/address')}>Zurück</button>
                             <button onClick={() => this.handleCheckout(context)}>Bestellen</button>
                         </div>
                     )}

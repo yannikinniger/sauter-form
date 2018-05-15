@@ -31,7 +31,8 @@ export default class ArticleView extends React.Component {
                     <DnKvsSelection/>
                     <PriceDisplay/>
                 </div>
-                <div className="form-row">
+                <div className="twin-button-row">
+                    <button onClick={() => this.props.history.push('/')}>Zurück</button>
                     <button onClick={this.handleSubmit.bind(this)} type="button">Weiter</button>
                 </div>
             </div>
