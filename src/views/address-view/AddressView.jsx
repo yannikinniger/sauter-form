@@ -16,69 +16,75 @@ class AddressView extends React.Component {
         this.state = {
             sameInvoiceAddress: true,
         };
-        this.getForm.bind(this);
+        this.getAddress.bind(this);
         this.handleFormError.bind(this);
+        this.handleBack.bind(this);
+        this.handleSubmit.bind(this);
     }
 
     handleInvoiceAddressChange(event) {
         this.setState({sameInvoiceAddress: event.target.checked})
     }
 
-    handleSubmit(event) {
+    handleSubmit(event, context) {
         event.preventDefault();
         this.hasError = false;
-        const deliveryAddress = this.getForm('deliveryAddress');
-        this.context.setAddress('deliveryAddress', deliveryAddress);
+        const deliveryAddress = this.getAddress('deliveryAddress');
+        context.setAddress('deliveryAddress', deliveryAddress);
+
         if (!this.state.sameInvoiceAddress) {
-            this.context.setAddress('deliveryAddress', this.getForm('invoiceAddress'));
+            context.setAddress('deliveryAddress', this.getAddress('invoiceAddress'));
         } else {
-            this.context.setAddress('invoiceAddress', deliveryAddress);
+            context.setAddress('invoiceAddress', deliveryAddress);
         }
+
         if (!this.hasError) {
             this.props.history.push('/order/checkout');
         }
     }
 
-    handleBack() {
-        this.context.clearItems();
+    handleBack(context) {
+        context.clearItems();
         this.props.history.push('/order');
     }
 
     render() {
         return (
-            <React.Fragment>
-                <div id="content">
-                    <OrderContext.Consumer>
-                        {context => {
-                            this.context = context
-                        }}
-                    </OrderContext.Consumer>
-                    <AddressSection title="Lieferadresse" formName="deliveryAddress"/>
-                    <div className="form-row">
-                        <InputRow title="Email" name="email" value={this.context.email}
-                                  onChange={email => this.context.setEmail(email)}/>
-                    </div>
-                    <div className="form-row">
-                        <span>
-                            <input type="checkbox" defaultChecked onClick={this.handleInvoiceAddressChange.bind(this)}/>
-                            <label>gleiche Rechnungsadresse</label>
-                        </span>
-                    </div>
-                    {this.state.sameInvoiceAddress ?
-                        <div/>
-                        :
-                        <AddressSection title="Rechnungsadresse" formName="invoiceAddress"/>
-                    }
-                    <div className="twin-button-row">
-                        <button onClick={this.handleBack.bind(this)}>Zurück</button>
-                        <button onClick={this.handleSubmit.bind(this)}>Weiter</button>
-                    </div>
-                </div>
-            </React.Fragment>
+            <div id="content">
+                <OrderContext.Consumer>
+                    {context => (
+                        <React.Fragment>
+                            <AddressSection title="Lieferadresse" formName="deliveryAddress"/>
+                            <div className="form-row">
+                                <InputRow title="Email" name="email" value={context.state.email}
+                                          onChange={email => context.setEmail(email)}/>
+                            </div>
+                            <div className="form-row">
+                                    <span>
+                                        <input type="checkbox" defaultChecked
+                                               onClick={this.handleInvoiceAddressChange.bind(this)}/>
+                                        <label>gleiche Rechnungsadresse</label>
+                                    </span>
+                            </div>
+                            {this.state.sameInvoiceAddress ?
+                                <div/>
+                                :
+                                <AddressSection title="Rechnungsadresse" formName="invoiceAddress"/>
+                            }
+                            <div className="twin-button-row">
+                                <button onClick={() => this.handleBack(context)}>Zurück</button>
+                                <button onClick={(event) => this.handleSubmit(event, context)}>
+                                    Weiter
+                                </button>
+                            </div>
+                        </React.Fragment>
+                    )}
+                </OrderContext.Consumer>
+            </div>
         )
     }
 
-    getForm(name) {
+    getAddress(name) {
         const formData = formExtract(`.${name}`);
         try {
             const address = new Address(formData);
