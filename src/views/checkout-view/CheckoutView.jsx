@@ -10,22 +10,36 @@ class CheckoutView extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = {displaySuccess: false};
+        this.state = {
+            displaySuccess: false,
+            sendCopy: true,
+        };
         this.handleCheckout.bind(this)
     }
 
     handleCheckout(orderContext) {
-        const deliveryAddress = orderContext.getAddress('deliveryAddress');
-        let invoiceAddress = orderContext.getAddress('invoiceAddress');
-        if (invoiceAddress === null) {
-            invoiceAddress = deliveryAddress;
+        this.setState({displaySuccess: true});
+        if (this.state.sendCopy) {
+            const deliveryAddress = orderContext.getAddress('deliveryAddress');
+            let invoiceAddress = orderContext.getAddress('invoiceAddress');
+            if (invoiceAddress === null) {
+                invoiceAddress = deliveryAddress;
+            }
+            const orderSuccessful = sendMail(orderContext.state.item, deliveryAddress, invoiceAddress, orderContext.state.email);
+            this.setState({displaySuccess: orderSuccessful});
         }
-        const orderSuccessful = sendMail(orderContext.state.item, deliveryAddress, invoiceAddress, orderContext.state.email);
-        this.setState({displaySuccess: orderSuccessful});
+        setTimeout(() => {
+            this.setState({displaySuccess: false});
+            this.props.history.push('/order');
+        }, 4000)
     }
 
     componentDidCatch() {
         window.location.href = '/order';
+    }
+
+    handleSendMailChange(event) {
+        this.setState({sendCopy: event.target.checked})
     }
 
     render() {
@@ -33,6 +47,12 @@ class CheckoutView extends React.Component {
             <div id="content">
                 <SuccessMessage visible={this.state.displaySuccess}/>
                 <OrderDisplay/>
+                <div className="form-row">
+                        <span>
+                            <input type="checkbox" defaultChecked onClick={this.handleSendMailChange.bind(this)}/>
+                            <label>Kopie der Bestellung an mich</label>
+                        </span>
+                </div>
                 <OrderContext>
                     {context => (
                         <div className="twin-button-row">

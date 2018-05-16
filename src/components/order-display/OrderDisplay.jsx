@@ -11,6 +11,7 @@ export default class OrderDisplay extends React.Component {
                 {context => (
                     <React.Fragment>
                         <AddressDisplay name="Lieferadresse" address={context.getAddress('deliveryAddress')}/>
+                        <AddressDisplay name="Rechnungsadresse" address={context.getAddress('invoiceAddress')}/>
                         <ItemDisplay item={context.getItem()}/>
                     </React.Fragment>
                 )}

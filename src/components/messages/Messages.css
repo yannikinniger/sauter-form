@@ -4,7 +4,9 @@
     width: 30em;
     top: 200px;
     height: 80px;
-    background-color: chartreuse;
+    background-color: #1db082;
+    color: white;
+    font-weight: bold;
     display: flex;
     justify-content: center;
     -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */

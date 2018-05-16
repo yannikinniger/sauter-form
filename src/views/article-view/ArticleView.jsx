@@ -10,7 +10,6 @@ export default class ArticleView extends React.Component {
     valveOptions = ["2-Weg", "3-Weg"];
 
     handleSubmit() {
-        this.context.saveCurrentItem();
         this.props.history.push('/order/address')
     }
 
@@ -20,13 +19,10 @@ export default class ArticleView extends React.Component {
                 <div id="product-section">
                     <h2>Auswahl Regelkugelhahn</h2>
                     <OrderContext.Consumer>
-                        {context => {
-                            this.context = context;
-                            return (
-                                <InputRadio name="Ventiltyp" options={this.valveOptions}
-                                            updateCallback={value => context.updateItem('valveAmount', value)}/>
-                            )
-                        }}
+                        {context =>
+                            <InputRadio name="Ventiltyp" options={this.valveOptions}
+                                        updateCallback={value => context.updateItem('valveAmount', value)}/>
+                        }
                     </OrderContext.Consumer>
                     <DnKvsSelection/>
                     <PriceDisplay/>

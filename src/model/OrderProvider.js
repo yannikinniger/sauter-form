@@ -14,14 +14,11 @@ export default class OrderProvider extends React.Component {
         invoiceAddress: new EmptyAddress(),
         email: "",
     };
-    items = [];
 
     render() {
         return (
             <OrderContext.Provider value={{
                 state: this.state,
-                saveCurrentItem: () => this.items.push(this.state.item),
-                getItems: () => this.items,
                 getItem: () => this.state.item,
                 clearItems: () => this.items = [],
                 updateItem: (property, value) => {

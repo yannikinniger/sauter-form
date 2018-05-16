@@ -16,7 +16,7 @@ class AddressView extends React.Component {
         this.state = {
             sameInvoiceAddress: true,
         };
-        this.saveForm.bind(this);
+        this.getForm.bind(this);
         this.handleFormError.bind(this);
     }
 
@@ -27,9 +27,12 @@ class AddressView extends React.Component {
     handleSubmit(event) {
         event.preventDefault();
         this.hasError = false;
-        this.saveForm('deliveryAddress');
+        const deliveryAddress = this.getForm('deliveryAddress');
+        this.context.setAddress('deliveryAddress', deliveryAddress);
         if (!this.state.sameInvoiceAddress) {
-            this.saveForm('invoiceAddress');
+            this.context.setAddress('deliveryAddress', this.getForm('invoiceAddress'));
+        } else {
+            this.context.setAddress('invoiceAddress', deliveryAddress);
         }
         if (!this.hasError) {
             this.props.history.push('/order/checkout');
@@ -75,11 +78,11 @@ class AddressView extends React.Component {
         )
     }
 
-    saveForm(name) {
+    getForm(name) {
         const formData = formExtract(`.${name}`);
         try {
             const address = new Address(formData);
-            this.context.setAddress(name, address);
+            return address;
         } catch (error) {
             this.handleFormError(formData);
         }
