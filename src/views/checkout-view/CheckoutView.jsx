@@ -4,7 +4,7 @@ import {OrderContext} from '../../App'
 import sendMail from '../../service/EmailService';
 import OrderDisplay from "../../components/order-display/OrderDisplay";
 import SuccessMessage from "../../components/messages/SuccessMessage";
-import { withRouter } from 'react-router-dom'
+import {withRouter} from 'react-router-dom'
 
 class CheckoutView extends React.Component {
 
@@ -16,11 +16,11 @@ class CheckoutView extends React.Component {
 
     handleCheckout(orderContext) {
         const deliveryAddress = orderContext.getAddress('deliveryAddress');
-        let invoiceAddress = orderContext.getAddress('invoiceAddress') ;
+        let invoiceAddress = orderContext.getAddress('invoiceAddress');
         if (invoiceAddress === null) {
             invoiceAddress = deliveryAddress;
         }
-        const orderSuccessful = sendMail(orderContext.getItems(), deliveryAddress, invoiceAddress);
+        const orderSuccessful = sendMail(orderContext.state.item, deliveryAddress, invoiceAddress, orderContext.state.email);
         this.setState({displaySuccess: orderSuccessful});
     }
 
@@ -31,7 +31,7 @@ class CheckoutView extends React.Component {
     render() {
         return (
             <div id="content">
-                <SuccessMessage visible={this.state.displaySuccess} />
+                <SuccessMessage visible={this.state.displaySuccess}/>
                 <OrderDisplay/>
                 <OrderContext>
                     {context => (

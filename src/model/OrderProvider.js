@@ -12,6 +12,7 @@ export default class OrderProvider extends React.Component {
         item: Item(),
         deliveryAddress: new EmptyAddress(),
         invoiceAddress: new EmptyAddress(),
+        email: "",
     };
     items = [];
 
@@ -41,6 +42,7 @@ export default class OrderProvider extends React.Component {
                     }
                 },
                 getAddress: name => this.state[name].getAddress(),
+                setEmail: newEmail => this.setState({email: newEmail}),
                 increaseQuantity: () => {
                     const newQuantity = this.state.item.quantity + 1;
                     this.quantityUpdate(newQuantity)

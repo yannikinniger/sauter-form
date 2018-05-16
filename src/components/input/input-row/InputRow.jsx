@@ -3,8 +3,11 @@ import './InputRow.css'
 
 export default class InputRow extends React.Component {
 
-    static handleChange(event) {
-        event.target.classList.remove('error')
+    handleChange(event) {
+        event.target.classList.remove('error');
+        if (this.props.onChange !== undefined) {
+            this.props.onChange(event.target.value)
+        }
     }
 
     render() {
@@ -12,7 +15,7 @@ export default class InputRow extends React.Component {
             <div className="form-row">
                 <label>{this.props.title}</label>
                 <input type="text" name={this.props.name.toLowerCase()}
-                       onChange={InputRow.handleChange} defaultValue={this.props.value}/>
+                       onChange={this.handleChange.bind(this)} defaultValue={this.props.value}/>
             </div>
         )
     }

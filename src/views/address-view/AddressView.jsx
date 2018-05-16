@@ -5,6 +5,7 @@ import {Address} from "../../model/Address";
 import formExtract from "form-extract";
 import {OrderContext} from "../../App";
 import {withRouter} from 'react-router-dom'
+import InputRow from "../../components/input/input-row/InputRow";
 
 class AddressView extends React.Component {
 
@@ -51,10 +52,14 @@ class AddressView extends React.Component {
                     </OrderContext.Consumer>
                     <AddressSection title="Lieferadresse" formName="deliveryAddress"/>
                     <div className="form-row">
-                    <span>
-                        <input type="checkbox" defaultChecked onClick={this.handleInvoiceAddressChange.bind(this)}/>
-                        <label>gleiche Rechnungsadresse</label>
-                    </span>
+                        <InputRow title="Email" name="email" value={this.context.email}
+                                  onChange={email => this.context.setEmail(email)}/>
+                    </div>
+                    <div className="form-row">
+                        <span>
+                            <input type="checkbox" defaultChecked onClick={this.handleInvoiceAddressChange.bind(this)}/>
+                            <label>gleiche Rechnungsadresse</label>
+                        </span>
                     </div>
                     {this.state.sameInvoiceAddress ?
                         <div/>
