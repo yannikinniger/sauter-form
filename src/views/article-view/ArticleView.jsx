@@ -18,7 +18,7 @@ export default class ArticleView extends React.Component {
         return (
             <div id="content">
                 <div id="product-section">
-                    <h2>Produkt</h2>
+                    <h2>Auswahl Regelkugelhahn</h2>
                     <OrderContext.Consumer>
                         {context => {
                             this.context = context;
