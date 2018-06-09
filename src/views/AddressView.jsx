@@ -1,11 +1,11 @@
 import React from 'react';
-import AddressSection from '../../components/address-section/AddressSection'
-import '../view.css'
-import {Address} from "../../model/Address";
+import AddressSection from '../components/address-section/AddressSection'
+import './view.css'
+import {Address} from "../model/Address";
 import formExtract from "form-extract";
-import {OrderContext} from "../../App";
+import {OrderContext} from "../App";
 import {withRouter} from 'react-router-dom'
-import InputRow from "../../components/input/input-row/InputRow";
+import InputRow from "../components/input/input-row/InputRow";
 
 class AddressView extends React.Component {
 
@@ -55,10 +55,8 @@ class AddressView extends React.Component {
                     {context => (
                         <React.Fragment>
                             <AddressSection title="Lieferadresse" formName="deliveryAddress"/>
-                            <div className="form-row">
-                                <InputRow title="Email" name="email" value={context.state.email}
-                                          onChange={email => context.setEmail(email)}/>
-                            </div>
+                            <InputRow title="Email" name="email" value={context.state.email}
+                                      onChange={email => context.setEmail(email)}/>
                             <div className="form-row">
                                     <span>
                                         <input type="checkbox" defaultChecked

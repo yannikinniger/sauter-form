@@ -1,9 +1,9 @@
 import React from 'react';
 import './view.css'
 import {Route} from 'react-router-dom';
-import AddressView from "./address-view/AddressView";
-import CheckoutView from "./checkout-view/CheckoutView";
-import ArticleView from "./article-view/ArticleView";
+import AddressView from "./AddressView";
+import CheckoutView from "./CheckoutView";
+import ArticleView from "./ArticleView";
 import OrderProvider from "../model/OrderProvider";
 
 export default class OrderView extends React.Component {

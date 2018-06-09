@@ -10,8 +10,10 @@ export default class OrderDisplay extends React.Component {
             <OrderContext.Consumer>
                 {context => (
                     <React.Fragment>
-                        <AddressDisplay name="Lieferadresse" address={context.getAddress('deliveryAddress')}/>
-                        <AddressDisplay name="Rechnungsadresse" address={context.getAddress('invoiceAddress')}/>
+                        <div id="checkout-addresses">
+                            <AddressDisplay name="Lieferadresse" address={context.getAddress('deliveryAddress')}/>
+                            <AddressDisplay name="Rechnungsadresse" address={context.getAddress('invoiceAddress')}/>
+                        </div>
                         <ItemDisplay item={context.getItem()}/>
                     </React.Fragment>
                 )}
@@ -24,7 +26,7 @@ export default class OrderDisplay extends React.Component {
 function AddressDisplay(props) {
     return (
         <div className="order-display-section">
-            <h2>{props.name}</h2>
+            <h3>{props.name}</h3>
             <table>
                 <tbody>
                 <tr>
@@ -48,31 +50,21 @@ function AddressDisplay(props) {
 function ItemDisplay(props) {
     return (
         <div key={props.item.articleNumber} className="order-display-section">
-            <h2>Übersicht</h2>
+            <h2>Artikel</h2>
             <ArticleRow description="Aussenfühler EGT301F102" quantity={props.item.quantity}/>
             <ArticleRow description="VL-Anlegefühler EGT311F102" quantity={props.item.quantity}/>
             <ArticleRow description="Normschema" quantity={props.item.quantity}/>
             <ArticleRow description={props.item.articleNumber} quantity={props.item.quantity}/>
-            <table>
-                <tbody>
-                <tr>
-                    <td>Ventiltyp</td>
-                    <td>{props.item.valveAmount}-Weg</td>
-                </tr>
-                <tr>
-                    <td>DN</td>
-                    <td>{props.item.dn}</td>
-                </tr>
-                <tr>
-                    <td>KVS</td>
-                    <td>{props.item.kvs}</td>
-                </tr>
-                <tr>
-                    <td>Preis</td>
-                    <td>{props.item.price}</td>
-                </tr>
-                </tbody>
-            </table>
+            <div id="article-overview">
+                <section>Ventiltyp</section>
+                <section>{props.item.valveAmount}-Weg</section>
+                <section>DN</section>
+                <section>{props.item.dn}</section>
+                <section>KVS</section>
+                <section>{props.item.kvs}</section>
+                <section>Preis</section>
+                <section>{props.item.price}.-</section>
+            </div>
         </div>
     )
 }

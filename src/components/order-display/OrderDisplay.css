@@ -1,5 +1,5 @@
 .order-display-section {
-    padding-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 .order-display-section td:nth-child(1) {
@@ -24,4 +24,27 @@
 
 .order-display-section .quantity {
     padding-right: 15px;
+}
+
+#checkout-addresses {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+#article-overview {
+    display: grid;
+    grid-template-columns: 25% 75%;
+    grid-gap: 20px;
+}
+
+@media only screen and (max-width: 600px) {
+
+    #checkout-addresses {
+        grid-template-columns: 100%;
+    }
+
+    #article-overview {
+        grid-template-columns: 35% 65%;
+    }
+
 }

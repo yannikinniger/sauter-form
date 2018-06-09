@@ -1,9 +1,9 @@
 import React from 'react';
-import InputRadio from '../../components/input/input-radio/InputRadio'
-import DnKvsSelection from '../../components/dn-kvs-selection/DnKvsSelection'
-import PriceDisplay from "../../components/price-display/PriceDisplay";
-import '../view.css'
-import {OrderContext} from '../../App';
+import InputRadio from '../components/input/input-radio/InputRadio'
+import DnKvsSelection from '../components/dn-kvs-selection/DnKvsSelection'
+import PriceDisplay from "../components/price-display/PriceDisplay";
+import './view.css'
+import {OrderContext} from '../App';
 
 export default class ArticleView extends React.Component {
 

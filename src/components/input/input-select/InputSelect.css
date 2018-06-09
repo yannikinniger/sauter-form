@@ -1,6 +1,6 @@
 .selectdiv {
     position: relative;
-    height: 36px;
+    height: 52px;
 }
 
 .selectdiv:after {
@@ -8,7 +8,7 @@
     font-family: FontAwesome;
     color: #fee011;
     right: 11px;
-    top: 6px;
+    top: 12px;
     height: 20px;
     padding: 8px 0 0 8px;
     position: absolute;
@@ -26,9 +26,10 @@ select::-ms-expand {
     appearance: none;
     /* Add some styling */
 
+    font-size: 14pt;
     display: block;
     width: 100%;
-    height: 36px;
+    height: 48px;
     float: right;
     margin: 5px 0;
     padding: 0 5px;

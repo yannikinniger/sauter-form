@@ -18,7 +18,7 @@ export default class PriceDisplay extends React.Component {
                                 <ArticleRow description="Aussenfühler EGT301F102" quantity={context.getItem().quantity}/>
                                 <ArticleRow description="VL-Anlegefühler EGT311F102" quantity={context.getItem().quantity}/>
                                 <ArticleRow description="Normschema" quantity={context.getItem().quantity}/>
-                                <div className="price-row">
+                                <div className="price-row summary-row">
                                     <label>Anzahl Set</label>
                                     <span>
                                         <i className="fas fa-minus" onClick={() => context.decreaseQuantity()}/>

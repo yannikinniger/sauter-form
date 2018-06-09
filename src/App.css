@@ -6,7 +6,7 @@
 .App {
     text-align: center;
     font-family: Futura;
-    font-size: 16px;
+    font-size: 14pt;
     margin-bottom: 150px;
 }
 
@@ -38,6 +38,7 @@
 #content-container {
     display: flex;
     justify-content: center;
+    padding: 0 20px;
 }
 
 button {
@@ -50,7 +51,7 @@ button {
     width: 100%;
     margin-top: 20px;
     font-family: Futura;
-    font-size: 14px;
+    font-size: 14pt;
 }
 
 button:hover:active {
@@ -67,7 +68,9 @@ button > a {
 }
 
 input {
-    height: 36px;
+    height: 48px;
+    font-size: 14pt;
     border: 1px solid #CCC;
-    padding: 0 5px;
+    padding-left: 10px;
+    box-sizing:border-box;
 }

@@ -10,7 +10,6 @@ class App extends Component {
     render() {
         return (
             <div className="App">
-                {/*<Route exact path="/" component={ProductView}/>*/}
                 <Route exact path="/" render={() => (<Redirect to="/order" />)}/>
                 <Route path="/order" component={OrderView}/>
             </div>
