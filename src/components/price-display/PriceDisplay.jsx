@@ -2,6 +2,7 @@ import React from 'react'
 import './PriceDisplay.css'
 import {OrderContext} from '../../App'
 import ArticleRow from '../article-row/ArticleRow'
+import ArticleCollapse from "../article-collapse/ArticleCollapse";
 
 export default class PriceDisplay extends React.Component {
 
@@ -13,13 +14,9 @@ export default class PriceDisplay extends React.Component {
                     <OrderContext.Consumer>
                         {context => (
                             <React.Fragment>
-                                <ArticleRow description={context.state.item.articleNumber}
-                                            quantity={context.getItem().quantity}/>
-                                <ArticleRow description="Aussenfühler EGT301F102" quantity={context.getItem().quantity}/>
-                                <ArticleRow description="VL-Anlegefühler EGT311F102" quantity={context.getItem().quantity}/>
-                                <ArticleRow description="Normschema" quantity={context.getItem().quantity}/>
-                                <div className="price-row summary-row">
-                                    <label>Anzahl Set</label>
+                                <ArticleCollapse context={context}/>
+                                <div className="price-row">
+                                    <label>Anzahl</label>
                                     <span>
                                         <i className="fas fa-minus" onClick={() => context.decreaseQuantity()}/>
                                         <label id="quantity">{context.state.item.quantity}</label>
