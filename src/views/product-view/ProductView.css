@@ -124,3 +124,11 @@
         width: 100%;
     }
 }
+
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)  {
+    .jumbotron > .content {
+        width: 30em;
+    }
+}

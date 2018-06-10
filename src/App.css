@@ -3,6 +3,10 @@
     src: url("/assets/futura-book.ttf");
 }
 
+h1, h2, h3, h4, h5, strong, b, button {
+    font-weight: 500;
+}
+
 .App {
     text-align: center;
     font-family: Futura;
