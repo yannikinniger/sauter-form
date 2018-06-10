@@ -15,7 +15,7 @@ class ProductView extends React.Component {
                     <div className="content">
                         <h1>Einführungsaktion zum Spezialpreis</h1>
                         <div className="content-block">
-                            <h4>Heizungsregler-Set für «witterungsgeführte» Vorlauftemperatur-Regelung</h4>
+                            <p>Heizungsregler-Set für «witterungsgeführte» Vorlauftemperatur-Regelung</p>
                             <img src="/assets/EQJW126.png" id="product-img" alt="Produktbild"/>
                             <p>Heizungsregler EQJW126F001</p>
                         </div>
