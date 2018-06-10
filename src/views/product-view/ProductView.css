@@ -1,41 +1,21 @@
-#product-view header {
-    position: relative;
-    height: 500px;
-    background-color: #0d88d3;
+
+#product-view {
+    text-align: center;
 }
 
 #product-view h1 {
     font: 36px "Futura";
     text-align: center;
-    margin-top: 0;
-    margin-bottom: 0;
-}
-
-#product-view header h1 {
-    color: white;
-    position: absolute;
-    margin-left: auto;
-    margin-right: auto;
-    left: 0;
-    right: 0;
-    top: 80px;
+    color: #0d88d3;
 }
 
 #product-img {
-    position: absolute;
-    width: 300px;
-    top: 150px;
-    left: 0;
-    right: 0;
+    max-width: 300px;
+    margin: 40px 0;
 }
 
-#product-view svg {
-    position: absolute;
-    bottom: 0;
-    width: 80%;
-    height: 10vw;
-    right: 0;
-    /* set height to pixels if you want angle to change with screen width */
+#product-view h3 {
+    color: #0d88d3;
 }
 
 .content {
@@ -46,11 +26,6 @@
 #product-view main {
     display: flex;
     justify-content: center;
-}
-
-#product-view .content {
-    width: 40em;
-    text-align: left;
 }
 
 #product-view h2 {
@@ -80,9 +55,71 @@
 }
 
 .order-now-button:hover {
-    background-color: #BBA10A;
+    background-color: #EDD10C;
 }
 
 .order-now-button:hover:active {
     background-color: #FFE10D;
+}
+
+.content-block {
+    margin: 30px 0;
+}
+
+#set-overview {
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    grid-gap: 20px;
+    justify-items: center;
+    align-items: center;
+}
+
+@media only screen and (max-width: 600px) {
+    #set-overview {
+        grid-template-columns: 100%;
+    }
+
+    #vl-fuehler-text {
+        grid-row: 2;
+    }
+
+    #at-fuehler-text {
+        grid-row: 4;
+    }
+}
+
+#set-overview img {
+    max-height: 200px;
+}
+
+.jumbotron {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 250px;
+    background-color: #666;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+    color: white;
+}
+
+.jumbotron > .content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+@media only screen and (max-width: 600px) {
+    .jumbotron > .content {
+        flex-direction: column;
+    }
+
+    .order-now-button {
+        float: none;
+        margin-left: 0;
+    }
+
+    #schema {
+        width: 100%;
+    }
 }

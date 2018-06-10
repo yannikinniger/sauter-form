@@ -52,7 +52,7 @@
 
 @media only screen and (max-width: 600px) {
     #content {
-        width: 20em;
+        max-width: 20em;
     }
 
     .twin-button-row {
