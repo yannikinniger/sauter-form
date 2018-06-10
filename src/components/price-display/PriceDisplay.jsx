@@ -1,7 +1,6 @@
 import React from 'react'
 import './PriceDisplay.css'
 import {OrderContext} from '../../App'
-import ArticleRow from '../article-row/ArticleRow'
 import ArticleCollapse from "../article-collapse/ArticleCollapse";
 
 export default class PriceDisplay extends React.Component {

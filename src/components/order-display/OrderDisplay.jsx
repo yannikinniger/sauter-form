@@ -1,7 +1,6 @@
 import React from 'react'
 import {OrderContext} from '../../App';
 import './OrderDisplay.css';
-import ArticleRow from "../article-row/ArticleRow";
 import ArticleCollapse from "../article-collapse/ArticleCollapse";
 
 export default class OrderDisplay extends React.Component {
