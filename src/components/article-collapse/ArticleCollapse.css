@@ -29,6 +29,7 @@
     border-bottom-left-radius: 7px;
     border-bottom-right-radius: 7px;
     padding: .5rem 1rem;
+    margin-bottom: 10px;
     background-color: #e5f2fd;
 }
 
@@ -45,4 +46,9 @@
 
 #collapsible {
     display: none;
+}
+
+.content-inner label {
+    color: black;
+    font-weight: normal;
 }

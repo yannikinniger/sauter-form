@@ -8,7 +8,8 @@ export default class ArticleCollapse extends React.Component {
         return (
             <div className="wrap-collabsible">
                 <input id="collapsible" className="toggle" type="checkbox"/>
-                <label htmlFor="collapsible" className="lbl-toggle">Heizungsregler-Set</label>
+                <label htmlFor="collapsible"
+                       className="lbl-toggle">{this.props.context.getItem().quantity}x Heizungsregler-Set</label>
                 <div className="collapsible-content">
                     <div className="content-inner">
                         <ArticleRow description={this.props.context.state.item.articleNumber}

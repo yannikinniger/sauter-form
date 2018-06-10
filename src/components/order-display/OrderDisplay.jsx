@@ -2,6 +2,7 @@ import React from 'react'
 import {OrderContext} from '../../App';
 import './OrderDisplay.css';
 import ArticleRow from "../article-row/ArticleRow";
+import ArticleCollapse from "../article-collapse/ArticleCollapse";
 
 export default class OrderDisplay extends React.Component {
 
@@ -14,7 +15,7 @@ export default class OrderDisplay extends React.Component {
                             <AddressDisplay name="Lieferadresse" address={context.getAddress('deliveryAddress')}/>
                             <AddressDisplay name="Rechnungsadresse" address={context.getAddress('invoiceAddress')}/>
                         </div>
-                        <ItemDisplay item={context.getItem()}/>
+                        <ItemDisplay item={context.getItem()} context={context}/>
                     </React.Fragment>
                 )}
             </OrderContext.Consumer>
@@ -51,10 +52,8 @@ function ItemDisplay(props) {
     return (
         <div key={props.item.articleNumber} className="order-display-section">
             <h2>Artikel</h2>
-            <ArticleRow description="Aussenfühler EGT301F102" quantity={props.item.quantity}/>
-            <ArticleRow description="VL-Anlegefühler EGT311F102" quantity={props.item.quantity}/>
-            <ArticleRow description="Normschema" quantity={props.item.quantity}/>
-            <ArticleRow description={props.item.articleNumber} quantity={props.item.quantity}/>
+            <ArticleCollapse context={props.context}/>
+            <h4>Konfiguration</h4>
             <div id="article-overview">
                 <section>Ventiltyp</section>
                 <section>{props.item.valveAmount}-Weg</section>
