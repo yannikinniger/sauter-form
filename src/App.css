@@ -53,6 +53,7 @@ button {
     margin-top: 20px;
     font-family: Futura;
     font-size: 14pt;
+    cursor: pointer;
 }
 
 button:hover:active {
