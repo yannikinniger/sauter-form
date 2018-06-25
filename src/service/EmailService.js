@@ -1,15 +1,22 @@
-export default function sendMail(items, deliveryAddress, invoiceAddress, email) {
-    const apiUrl = 'https://hooks.zapier.com/hooks/catch/3247473/a6fuf9/';
+export default function sendMail(item, deliveryAddress, invoiceAddress, email, sendCopy) {
+    const apiUrl = 'http://localhost:4567/order';
     const payload = {
-        item: items,
         deliveryAddress: deliveryAddress,
         invoiceAddress: invoiceAddress,
-        email: email,
+        kvs: item.kvs,
+        dn: item.dn,
+        quantity: item.quantity,
+        price: item.price,
+        articleNumber: item.articleNumber,
+        mailAddress: email,
+        sendCopy: sendCopy
     };
-    return fetch(apiUrl, {
-        method: 'POST',
-        body: JSON.stringify(payload)
-    }).then(response => {
-        return response.status === 200;
-    });
+    return new Promise(resolve => {
+        fetch(apiUrl, {
+            method: 'POST',
+            body: JSON.stringify(payload)
+        }).then(response => {
+            resolve(response.status === 200);
+        });
+    })
 }
