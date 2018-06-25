@@ -19,21 +19,20 @@ class CheckoutView extends React.Component {
 
     handleCheckout(orderContext) {
         if (this.state.displaySuccess === false) {
-            console.log('sent');
-            this.setState({displaySuccess: true});
-            if (this.state.sendCopy) {
-                const deliveryAddress = orderContext.getAddress('deliveryAddress');
-                let invoiceAddress = orderContext.getAddress('invoiceAddress');
-                if (invoiceAddress === null) {
-                    invoiceAddress = deliveryAddress;
-                }
-                const orderSuccessful = sendMail(orderContext.state.item, deliveryAddress, invoiceAddress, orderContext.state.email);
-                this.setState({displaySuccess: orderSuccessful});
+            const deliveryAddress = orderContext.getAddress('deliveryAddress');
+            let invoiceAddress = orderContext.getAddress('invoiceAddress');
+            if (invoiceAddress === null) {
+                invoiceAddress = deliveryAddress;
             }
-            setTimeout(() => {
-                this.setState({displaySuccess: false});
-                this.props.history.push('/order');
-            }, 4000)
+
+            sendMail(orderContext.state.item, deliveryAddress, invoiceAddress, orderContext.state.email, this.state.sendCopy)
+                .then(orderSuccessful => {
+                    this.setState({displaySuccess: orderSuccessful});
+                    setTimeout(() => {
+                        this.setState({displaySuccess: false});
+                        this.props.history.push('/order');
+                    }, 4000)
+                });
         }
     }
 

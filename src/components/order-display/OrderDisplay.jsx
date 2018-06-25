@@ -36,7 +36,7 @@ function AddressDisplay(props) {
                     <td>{props.address.street}</td>
                 </tr>
                 <tr>
-                    <td>{props.address.zipcode + " " + props.address.city}</td>
+                    <td>{props.address.zip + " " + props.address.city}</td>
                 </tr>
                 <tr>
                     <td>{props.address.email}</td>

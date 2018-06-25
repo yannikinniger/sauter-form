@@ -4,25 +4,32 @@ import PriceService from "../service/PriceService";
 import {getArticleNumber} from "../service/ArticleNumberService";
 import {Item} from './Item'
 import {OrderContext} from '../App'
-import {Address, EmptyAddress} from "./Address";
+import {Address} from "./Address";
 
 export default class OrderProvider extends React.Component {
-    state = {
-        kvsOptions: DnKvsMap.getDnKvsMap(2).get('DN15'),
-        item: Item(),
-        deliveryAddress: new EmptyAddress(),
-        invoiceAddress: new EmptyAddress(),
-        email: "",
-    };
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            kvsOptions: DnKvsMap.getDnKvsMap(2).get('DN15'),
+            item: Item(),
+            deliveryAddress: Address.empty(),
+            invoiceAddress: Address.empty(),
+            email: "",
+        };
+    }
+
 
     render() {
         return (
             <OrderContext.Provider value={{
                 state: this.state,
                 getItem: () => this.state.item,
-                clearItems: () => this.items = [],
+                clearItems: () => this.setState({item: Item()}),
                 updateItem: (property, value) => {
-                    if (this.state.item[property] === value) { return; }
+                    if (this.state.item[property] === value) {
+                        return;
+                    }
                     const newItem = Object.assign({}, this.state.item);
                     newItem[property] = value;
                     newItem.articleNumber = getArticleNumber(newItem);
@@ -38,7 +45,7 @@ export default class OrderProvider extends React.Component {
                         this.setState({[name]: address})
                     }
                 },
-                getAddress: name => this.state[name].getAddress(),
+                getAddress: name => this.state[name],
                 setEmail: newEmail => this.setState({email: newEmail}),
                 increaseQuantity: () => {
                     const newQuantity = this.state.item.quantity + 1;

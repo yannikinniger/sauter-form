@@ -27,8 +27,8 @@ export default class AddressSection extends React.Component {
                                     <div className="twin-form-row">
                                         <InputRow title="Ort" name="city"
                                                   value={this.getAddressProperty(address, 'city')}/>
-                                        <InputRow title="Postleitzahl" name="zipcode"
-                                                  value={this.getAddressProperty(address, 'zipcode')}/>
+                                        <InputRow title="Postleitzahl" name="zip"
+                                                  value={this.getAddressProperty(address, 'zip')}/>
                                     </div>
                                 </React.Fragment>
                             )

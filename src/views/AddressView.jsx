@@ -33,7 +33,7 @@ class AddressView extends React.Component {
         context.setAddress('deliveryAddress', deliveryAddress);
 
         if (!this.state.sameInvoiceAddress) {
-            context.setAddress('deliveryAddress', this.getAddress('invoiceAddress'));
+            context.setAddress('invoiceAddress', this.getAddress('invoiceAddress'));
         } else {
             context.setAddress('invoiceAddress', deliveryAddress);
         }
@@ -85,8 +85,7 @@ class AddressView extends React.Component {
     getAddress(name) {
         const formData = formExtract(`.${name}`);
         try {
-            const address = new Address(formData);
-            return address;
+            return new Address(formData);
         } catch (error) {
             this.handleFormError(formData);
         }

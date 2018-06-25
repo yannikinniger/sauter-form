@@ -1,28 +1,26 @@
 export class Address {
 
-    requiredProperties = ['company', 'street', 'city', 'zipcode'];
+    requiredProperties = ['company', 'street', 'city', 'zip'];
 
-    constructor(addressObject) {
-        const hasRequiredProperties = this.requiredProperties.every(
-            property => Address.checkObjectProperty(property, addressObject));
-        if (!hasRequiredProperties) {
-            throw new Error("Does not have required properties")
+    constructor(args) {
+        if (!this.hasRequiredProperties(args)) {
+            throw new Error('does not have required properties')
         } else {
-            this.address = addressObject;
+            this.company = args['company'];
+            this.street = args['street'];
+            this.city = args['city'];
+            this.zip = args['zip'];
         }
     }
 
-    getAddress() {
-        return this.address;
+    hasRequiredProperties(args) {
+        return this.requiredProperties.every(property => args[property] !== "")
     }
 
-    static checkObjectProperty(property, object) {
-        return object[property] !== "";
+    static empty() {
+        let emptyAddress = {};
+        emptyAddress.prototype = Address.prototype;
+        return emptyAddress
     }
-}
 
-export class EmptyAddress {
-    getAddress() {
-        return null;
-    }
 }
