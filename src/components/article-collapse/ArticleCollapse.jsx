@@ -16,11 +16,16 @@ export default class ArticleCollapse extends React.Component {
                                     quantity={this.props.context.getItem().quantity}/>
                         <ArticleRow description="Heizungsregler EQJW126F001"
                                     quantity={this.props.context.getItem().quantity}/>
-                        <ArticleRow description="Aussenfühler EGT301F102"
+                        <ArticleRow description="Aussentemperatur-Fühler EGT301F102"
                                     quantity={this.props.context.getItem().quantity}/>
-                        <ArticleRow description="VL-Anlegefühler EGT311F102"
+                        <ArticleRow description="Vorlauftemperatur-Fühler EGT311F102"
                                     quantity={this.props.context.getItem().quantity}/>
-                        <ArticleRow description="Normschema" quantity={this.props.context.getItem().quantity}/>
+                        <div className="price-row">
+                            <label className="article">
+                                <span className="quantityDisplay">{this.props.context.getItem().quantity}x</span>
+                                Normschema <a href="/files/normschema_EQJW126.pdf">Link</a>
+                            </label>
+                        </div>
                     </div>
                 </div>
             </div>
