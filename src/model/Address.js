@@ -1,6 +1,6 @@
 export class Address {
 
-    requiredProperties = ['company', 'street', 'city', 'zip'];
+    static requiredProperties = ['company', 'street', 'city', 'zip'];
 
     constructor(args) {
         if (!this.hasRequiredProperties(args)) {
@@ -14,7 +14,7 @@ export class Address {
     }
 
     hasRequiredProperties(args) {
-        return this.requiredProperties.every(property => args[property] !== "")
+        return Address.requiredProperties.every(property => args[property] !== "")
     }
 
     static empty() {

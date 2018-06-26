@@ -94,7 +94,7 @@ class AddressView extends React.Component {
     handleFormError(formData) {
         this.hasError = true;
         Object.entries(formData)
-            .filter(([key, value]) => value === '')
+            .filter(([key, value]) => Address.requiredProperties.indexOf(key) !== -1 && value === '')
             .forEach(([key, value]) => {
                 const elements = document.getElementsByName(key);
                 elements.forEach(element => {
