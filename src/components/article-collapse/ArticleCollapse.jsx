@@ -1,6 +1,7 @@
 import React from 'react'
 import './ArticleCollapse.css'
 import ArticleRow from '../article-row/ArticleRow'
+import {Link} from 'react-router-dom';
 
 export default class ArticleCollapse extends React.Component {
 
@@ -23,7 +24,7 @@ export default class ArticleCollapse extends React.Component {
                         <div className="price-row">
                             <label className="article">
                                 <span className="quantityDisplay">{this.props.context.getItem().quantity}x</span>
-                                Normschema <a href="/files/normschema_EQJW126.pdf">Link</a>
+                                Normschema <Link to="/files/normschema_EQJW126.pdf" target="_blank">Link</Link>
                             </label>
                         </div>
                     </div>
