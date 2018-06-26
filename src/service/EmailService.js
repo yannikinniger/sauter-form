@@ -1,5 +1,5 @@
 export default function sendMail(item, deliveryAddress, invoiceAddress, email, sendCopy) {
-    const apiUrl = 'https://hlk-components/order';
+    const apiUrl = 'https://hlk-components.ch/submit';
     const payload = {
         deliveryAddress: deliveryAddress,
         invoiceAddress: invoiceAddress,
@@ -16,6 +16,7 @@ export default function sendMail(item, deliveryAddress, invoiceAddress, email, s
             method: 'POST',
             body: JSON.stringify(payload)
         }).then(response => {
+            console.log(response);
             resolve(response.status === 200);
         });
     })
