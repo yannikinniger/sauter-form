@@ -1,5 +1,5 @@
 export default function sendMail(item, deliveryAddress, invoiceAddress, email, sendCopy) {
-    const apiUrl = 'https//hlk-components:5000/order';
+    const apiUrl = 'https://hlk-components/order';
     const payload = {
         deliveryAddress: deliveryAddress,
         invoiceAddress: invoiceAddress,
