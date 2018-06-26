@@ -62,7 +62,9 @@ class ProductView extends React.Component {
                         <div className="content-block">
                             <h3>Schema</h3>
                             <img id="schema" src="/assets/schema.png" alt="Schema"/>
-                            <a href="/files/normschema_EQJW126.pdf">Normschema</a>
+                            <div>
+                                <a href="/files/normschema_EQJW126.pdf">Link zum Normschema</a>
+                            </div>
                         </div>
                         <div className="content-block">
                             <h3>Im Paketpreis nicht enthalten sind: </h3>
