@@ -41,7 +41,7 @@
 }
 
 .toggle:checked + .lbl-toggle + .collapsible-content {
-    max-height: 350px;
+    display: inline;
 }
 
 #collapsible {
@@ -51,4 +51,10 @@
 .content-inner label {
     color: black;
     font-weight: normal;
+}
+
+@media only screen and (max-width: 600px) {
+    .collapsible-content .price-row {
+        padding: 10px 0;
+    }
 }
