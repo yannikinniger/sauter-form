@@ -5,9 +5,7 @@ import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 import { BrowserRouter } from 'react-router-dom';
 import ScrollToTop from "./ScrollToTop";
-import { unregister } from "./registerServiceWorker";
 
-unregister();
 ReactDOM.render(
     <BrowserRouter>
         <ScrollToTop>
