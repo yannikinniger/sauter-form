@@ -15,7 +15,7 @@ export default class OrderView extends React.Component {
                         <Route exact path="/order" component={ArticleView}/>
                         <Route path="/order/address" component={AddressView}/>
                         <Route path="/order/checkout" component={CheckoutView}/>
-                        <Route onEnter={() => window.location.reload()}/>
+                        <Route onEnter={() => window.location.href = window.location.href}/>
                     </OrderProvider>
                 </div>
             </React.Fragment>
