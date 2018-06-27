@@ -24,10 +24,7 @@ export default class ArticleCollapse extends React.Component {
                         <div className="price-row">
                             <label className="article">
                                 <span className="quantityDisplay">{this.props.context.getItem().quantity}x</span>
-                                Normschema <Link target="_blank"
-                                                 onClick={(event) => { event.preventDefault(); window.open('/normschema_EQJW126.pdf'); }}>
-                                Link
-                            </Link>
+                                Normschema <Link target="_blank" to="/normschema_EQJW126.pdf">Link</Link>
                             </label>
                         </div>
                     </div>
