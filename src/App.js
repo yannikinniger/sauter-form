@@ -3,9 +3,11 @@ import './App.css';
 import {Route} from 'react-router-dom';
 import ProductView from "./views/product-view/ProductView";
 import OrderView from "./views/OrderView";
+import {unregister} from "./registerServiceWorker";
 
 export const OrderContext = React.createContext();
 
+unregister();
 class App extends Component {
     render() {
         return (
@@ -15,7 +17,7 @@ class App extends Component {
                 </header>
                 <Route exact path="/" render={ProductView}/>
                 <Route path="/order" component={OrderView}/>
-                <Route onEnter={() => window.location.reload(true)}/>
+                <Route onEnter={() => window.location.reload()}/>
             </div>
         );
     }
