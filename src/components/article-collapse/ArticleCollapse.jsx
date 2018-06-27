@@ -1,7 +1,7 @@
 import React from 'react'
 import './ArticleCollapse.css'
 import ArticleRow from '../article-row/ArticleRow'
-import Link from 'react-router-dom'
+import {Link} from 'react-router-dom'
 
 export default class ArticleCollapse extends React.Component {
 
