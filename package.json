@@ -1,6 +1,6 @@
 {
   "name": "sauter-form",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "form-extract": "^1.0.0",
