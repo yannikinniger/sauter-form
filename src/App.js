@@ -15,6 +15,7 @@ class App extends Component {
                 </header>
                 <Route exact path="/" render={ProductView}/>
                 <Route path="/order" component={OrderView}/>
+                <Route onEnter={() => window.location.reload(true)}/>
             </div>
         );
     }
