@@ -1,6 +1,7 @@
 import React from 'react'
 import {withRouter} from 'react-router-dom';
 import './ProductView.css';
+import {Link} from 'react-router-dom'
 
 class ProductView extends React.Component {
 
@@ -63,7 +64,7 @@ class ProductView extends React.Component {
                             <h3>Schema</h3>
                             <img id="schema" src="/assets/schema.png" alt="Schema"/>
                             <div>
-                                <a href="/files/normschema_EQJW126.pdf">Link zum Normschema</a>
+                                <Link to={process.env.PUBLIC_URL + '/normschema_EQJW126.pdf'} target="_blank">Link zum Normschema</Link>
                             </div>
                         </div>
                         <div className="content-block">
