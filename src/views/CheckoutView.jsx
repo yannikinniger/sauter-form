@@ -22,10 +22,10 @@ class CheckoutView extends React.Component {
             const deliveryAddress = orderContext.getAddress('deliveryAddress');
             let invoiceAddress = orderContext.getAddress('invoiceAddress');
             if (invoiceAddress === null) {
-                invoiceAddress = deliveryAddress;
+                orderContext.setAddress('invoiceAddress', deliveryAddress);
             }
 
-            sendMail(orderContext.state.item, deliveryAddress, invoiceAddress, orderContext.state.email, this.state.sendCopy)
+            sendMail(orderContext)
                 .then(orderSuccessful => {
                     this.setState({displaySuccess: orderSuccessful});
                     setTimeout(() => {

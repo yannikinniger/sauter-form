@@ -1,15 +1,17 @@
-export default function sendMail(item, deliveryAddress, invoiceAddress, email, sendCopy) {
+export default function sendMail(context) {
     const apiUrl = 'https://hlk-components.ch/submit';
+    const item = context.state.item;
     const payload = {
-        deliveryAddress: deliveryAddress,
-        invoiceAddress: invoiceAddress,
+        project: context.state.project,
+        deliveryAddress: context.state.deliveryAddress,
+        invoiceAddress: context.state.invoiceAddress,
         kvs: item.kvs,
         dn: item.dn,
         quantity: item.quantity,
         price: item.price,
         articleNumber: item.articleNumber,
-        mailAddress: email,
-        sendCopy: sendCopy
+        mailAddress: context.state.email,
+        sendCopy: context.state.sendCopy,
     };
     return new Promise(resolve => {
         fetch(apiUrl, {
