@@ -16,6 +16,7 @@ export default class OrderProvider extends React.Component {
             deliveryAddress: Address.empty(),
             invoiceAddress: Address.empty(),
             email: "",
+            project: "",
         };
     }
 
@@ -47,6 +48,7 @@ export default class OrderProvider extends React.Component {
                 },
                 getAddress: name => this.state[name],
                 setEmail: newEmail => this.setState({email: newEmail}),
+                setProject: project => this.setState({project: project}),
                 increaseQuantity: () => {
                     const newQuantity = this.state.item.quantity + 1;
                     this.quantityUpdate(newQuantity)

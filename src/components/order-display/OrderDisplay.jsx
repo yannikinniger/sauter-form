@@ -10,6 +10,10 @@ export default class OrderDisplay extends React.Component {
             <OrderContext.Consumer>
                 {context => (
                     <React.Fragment>
+                        <div className="order-display-section">
+                            <h3>Projekt</h3>
+                            <div>{context.state.project}</div>
+                        </div>
                         <div id="checkout-addresses">
                             <AddressDisplay name="Lieferadresse" address={context.getAddress('deliveryAddress')}/>
                             <AddressDisplay name="Rechnungsadresse" address={context.getAddress('invoiceAddress')}/>

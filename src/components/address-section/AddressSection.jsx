@@ -20,15 +20,13 @@ export default class AddressSection extends React.Component {
                                 <React.Fragment>
                                     <InputRow title="Firma" name="company"
                                               value={this.getAddressProperty(address, 'company')}/>
-                                    <InputRow title="Projekt" name="project"
-                                              value={this.getAddressProperty(address, 'project')}/>
                                     <InputRow title="Strasse" name="street"
                                               value={this.getAddressProperty(address, 'street')}/>
                                     <div className="twin-form-row">
-                                        <InputRow title="Ort" name="city"
-                                                  value={this.getAddressProperty(address, 'city')}/>
                                         <InputRow title="Postleitzahl" name="zip"
                                                   value={this.getAddressProperty(address, 'zip')}/>
+                                        <InputRow title="Ort" name="city"
+                                                  value={this.getAddressProperty(address, 'city')}/>
                                     </div>
                                 </React.Fragment>
                             )

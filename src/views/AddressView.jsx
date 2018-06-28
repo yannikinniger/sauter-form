@@ -54,6 +54,8 @@ class AddressView extends React.Component {
                 <OrderContext.Consumer>
                     {context => (
                         <React.Fragment>
+                            <InputRow title="Projektname" name="project" value={context.state.email}
+                                      onChange={project => context.setProject(project)}/>
                             <AddressSection title="Lieferadresse" formName="deliveryAddress"/>
                             <InputRow title="Email" name="email" value={context.state.email}
                                       onChange={email => context.setEmail(email)}/>
