@@ -10,6 +10,7 @@ export class Address {
             this.street = args['street'];
             this.city = args['city'];
             this.zip = args['zip'];
+            this.project = args['project'] || null
         }
     }
 
