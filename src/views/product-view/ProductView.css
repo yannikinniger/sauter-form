@@ -21,6 +21,7 @@
 .content {
     display: flex;
     flex-direction: column;
+    max-width: 90vw;
 }
 
 #product-view main {
