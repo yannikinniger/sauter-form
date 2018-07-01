@@ -64,7 +64,8 @@ class ProductView extends React.Component {
                             <h3>Schema</h3>
                             <img id="schema" src="/assets/schema.png" alt="Schema"/>
                             <div>
-                                <Link to={process.env.PUBLIC_URL + '/normschema_EQJW126.pdf'} target="_blank">Link zum Normschema</Link>
+                                <Link to={process.env.PUBLIC_URL + '/normschema_EQJW126.pdf'} target="_blank">Link zum
+                                    Normschema</Link>
                             </div>
                         </div>
                         <div className="content-block">
@@ -77,6 +78,11 @@ class ProductView extends React.Component {
                                 <li>Elektro-Tableau</li>
                                 <li>Inbetriebnahme des Heizungsreglers</li>
                             </ul>
+                        </div>
+                        <div className="content-block">
+                            <p>Für weitere Auskünfte wenden Sie sich bitte an unsere lokale Niederlassung</p>
+                            <a href="https://www.sauter-building-control.ch/unternehmen-sauter/standorte-kontakte-sauter.html"
+                               target="_blank" rel="noopener noreferrer">Standorte</a>
                         </div>
                         <div className="content-block">
                             <button className="pull-right order-now-button" onClick={this.handleSubmit.bind(this)}>
