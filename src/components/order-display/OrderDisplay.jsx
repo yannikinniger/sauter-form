@@ -10,9 +10,17 @@ export default class OrderDisplay extends React.Component {
             <OrderContext.Consumer>
                 {context => (
                     <React.Fragment>
-                        <div className="order-display-section">
-                            <h3>Projekt</h3>
-                            <div>{context.state.project}</div>
+                        <div>
+                            {context.state.project === "" ?
+                                <span/>
+                                :
+                                <p>Projekt: {context.state.project}</p>
+                            }
+                            {context.state.reference === "" ?
+                                <span/>
+                                :
+                                <p>Referenz: {context.state.reference}</p>
+                            }
                         </div>
                         <div id="checkout-addresses">
                             <AddressDisplay name="Lieferadresse" address={context.getAddress('deliveryAddress')}/>
