@@ -21,6 +21,7 @@ class CheckoutView extends React.Component {
         if (this.state.displaySuccess === false) {
             const deliveryAddress = orderContext.getAddress('deliveryAddress');
             let invoiceAddress = orderContext.getAddress('invoiceAddress');
+            orderContext.setState({sendCopy: this.state.sendCopy});
             if (invoiceAddress === null) {
                 orderContext.setAddress('invoiceAddress', deliveryAddress);
             }
