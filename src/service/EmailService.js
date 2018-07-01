@@ -3,6 +3,7 @@ export default function sendMail(context) {
     const item = context.state.item;
     const payload = {
         project: context.state.project,
+        reference: context.state.reference,
         deliveryAddress: context.state.deliveryAddress,
         invoiceAddress: context.state.invoiceAddress,
         kvs: item.kvs,

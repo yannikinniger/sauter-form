@@ -17,6 +17,7 @@ export default class OrderProvider extends React.Component {
             invoiceAddress: Address.empty(),
             email: "",
             project: "",
+            reference: ""
         };
     }
 
@@ -25,6 +26,7 @@ export default class OrderProvider extends React.Component {
         return (
             <OrderContext.Provider value={{
                 state: this.state,
+                setState: newState => this.setState(newState),
                 getItem: () => this.state.item,
                 clearItems: () => this.setState({item: Item()}),
                 updateItem: (property, value) => {
