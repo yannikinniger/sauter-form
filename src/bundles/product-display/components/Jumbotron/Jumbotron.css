@@ -1,0 +1,39 @@
+.jumbotron {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 250px;
+    background-color: #666;
+    margin-left: calc(-50vw + 50%) !important;
+    margin-right: calc(-50vw + 50%) !important;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    color: white;
+    max-width: none;
+}
+
+.jumbotron-container {
+    width: 100%;
+    display: flex;
+    align-items: baseline;
+}
+
+@media only screen and (max-width: 768px) {
+    .jumbotron-container {
+        max-width: 90vw;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .jumbotron-container > .order-now-button {
+        margin: 0;
+    }
+}
+
+@media only screen
+and (min-device-width: 768px)
+and (max-device-width: 1024px) {
+    .jumbotron-container {
+        max-width: 90vw;
+    }
+}

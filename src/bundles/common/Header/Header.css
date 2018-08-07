@@ -1,0 +1,24 @@
+.header {
+    height: 150px;
+    padding: 20px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    background-color: #E5F2FD;
+}
+
+@media only screen and (max-width: 600px) {
+    .header {
+        height: 40px;
+    }
+
+    #logo {
+        width: 200px;
+    }
+}
+
+#logo {
+    max-width: 400px;
+    align-self: center;
+}

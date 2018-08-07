@@ -11,31 +11,6 @@
     -webkit-font-smoothing: antialiased;
 }
 
-.App-header {
-    height: 150px;
-    padding: 20px;
-    color: white;
-    display: flex;
-    justify-content: center;
-    margin-bottom: 30px;
-    background-color: #E5F2FD;
-}
-
-@media only screen and (max-width: 600px) {
-    .App-header {
-        height: 40px;
-    }
-
-    #logo {
-        width: 200px;
-    }
-}
-
-#logo {
-    max-width: 400px;
-    align-self: center;
-}
-
 #content-container {
     display: flex;
     justify-content: center;
@@ -80,4 +55,83 @@ input {
 
 a {
     color: #0d88d3;
+}
+
+.form-row {
+    flex-grow: 1;
+    padding: 20px 0;
+}
+
+.form-row > label {
+    margin-right: 10px;
+    display: inherit;
+    margin-bottom: 10px;
+    color: #0d88d3;
+    font-weight: bold;
+}
+
+.form-row > input, .form-row > select {
+    width: 100%;
+}
+
+
+.form-row span {
+    display: inline-flex;
+    align-items: center;
+}
+
+.twin-form-row, .twin-button-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.twin-form-row > :first-child {
+    padding-right: 10px;
+    margin-right: 10px;
+}
+
+.twin-button-row > :first-child {
+    background-color: #999;
+    margin-right: 10px;
+}
+
+.twin-button-row > :nth-child(2) {
+    margin-right: -10px;
+}
+
+#content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: start;
+    width: 30em;
+}
+
+@media only screen and (max-width: 600px) {
+    #content {
+        max-width: 90vw;
+    }
+
+    .twin-button-row {
+        flex-direction: column-reverse;
+    }
+
+    .content-block {
+        max-width: 90vw;
+    }
+}
+
+#content h2 {
+    margin-bottom: 10px;
+    margin-top: 0;
+}
+
+#back-btn {
+    background-color: #999999;
+    margin-top: 0;
+}
+
+.content-block {
+    margin: 30px 0;
+    max-width: 50em;
 }

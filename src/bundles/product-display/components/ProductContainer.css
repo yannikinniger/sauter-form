@@ -1,0 +1,62 @@
+
+#product-view {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    max-width: 90vw;
+}
+
+#product-view h1 {
+    font: 36px "Futura";
+    text-align: center;
+    color: #0d88d3;
+}
+
+#product-img {
+    max-width: 300px;
+    margin: 40px 0;
+}
+
+#product-view h3 {
+    color: #0d88d3;
+}
+
+#product-view main {
+    display: flex;
+    justify-content: center;
+}
+
+#product-view h2 {
+    margin-bottom: 40px;
+}
+
+#product-view li {
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+#product-view ul {
+    padding-left: 20px;
+    margin-top: 0;
+}
+
+#product-view img {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.order-now-button {
+    width: auto;
+    background-color: #fbd80d;
+    margin-left: auto;
+    margin-top: 0;
+}
+
+.order-now-button:hover {
+    background-color: #EDD10C;
+}
+
+.order-now-button:hover:active {
+    background-color: #FFE10D;
+}
+

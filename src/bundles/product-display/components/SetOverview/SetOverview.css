@@ -1,0 +1,25 @@
+#set-overview {
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    grid-gap: 20px;
+    justify-items: center;
+    align-items: center;
+}
+
+@media only screen and (max-width: 600px) {
+    #set-overview {
+        grid-template-columns: 100%;
+    }
+
+    #vl-fuehler-text {
+        grid-row: 2;
+    }
+
+    #at-fuehler-text {
+        grid-row: 4;
+    }
+}
+
+#set-overview img {
+    max-height: 200px;
+}
