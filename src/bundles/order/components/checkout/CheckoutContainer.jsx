@@ -4,8 +4,11 @@ import {sendMail} from '../../functions';
 import OrderDisplay from "./OrderDisplay/OrderDisplay";
 import {SuccessMessage} from "../../../common/Messages";
 import {Paths} from '../../routes/order'
+import {TranslationProvider} from "../../../translations";
 
 export default class CheckoutContainer extends React.Component {
+
+    text = TranslationProvider.translationObject.order;
 
     constructor(props) {
         super(props);
@@ -47,22 +50,22 @@ export default class CheckoutContainer extends React.Component {
     render() {
         return (
             <div id="content">
-                <h2>Übersicht</h2>
+                <h2>{this.text.checkout.overview}</h2>
                 <SuccessMessage visible={this.state.displaySuccess}/>
                 <OrderContext>
                     {context => (
                         <React.Fragment>
                             <OrderDisplay orderContext={context}/>
-                            <button onClick={() => this.handleCheckout(context)}>Bestellen</button>
+                            <button onClick={() => this.handleCheckout(context)}>{this.text.checkout.order}</button>
                             <div className="form-row">
                                 <span>
                                     <input type="checkbox" defaultChecked
                                            onClick={this.handleSendMailChange.bind(this)}/>
-                                    <label>Kopie der Bestellung an mich</label>
+                                    <label>{this.text.checkout.sendCopy}</label>
                                 </span>
                             </div>
                             <button id="back-btn" onClick={() => this.props.history.push(Paths.address)}>
-                                Zurück
+                                {this.text.buttons.back}
                             </button>
                         </React.Fragment>
                     )}

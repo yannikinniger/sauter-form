@@ -33,7 +33,8 @@
         "options": [
           "2-voies",
           "3-voies"
-        ]
+        ],
+        "way": "voies"
       },
       "dnTitle": "Diamètre nominal",
       "article": "Article",
@@ -56,7 +57,9 @@
       "optional": "facultatif"
     },
     "checkout": {
-      "overview": "Übersicht"
+      "overview": "Übersicht",
+      "order": "Commander",
+      "sendCopy": "Copie de la commande à moi"
     },
     "buttons": {
       "back": "Retour",

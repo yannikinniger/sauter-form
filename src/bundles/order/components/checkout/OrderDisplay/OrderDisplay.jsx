@@ -1,8 +1,12 @@
 import React from 'react'
 import './OrderDisplay.css';
 import {ArticleDisplay} from '../../common';
+import {TranslationProvider} from "../../../../translations";
+import ArticleOverview from "../ArticleOverview/ArticleOverview";
 
 export default class OrderDisplay extends React.Component {
+
+    text = TranslationProvider.translationObject.order.address;
 
     render() {
         return (
@@ -11,21 +15,23 @@ export default class OrderDisplay extends React.Component {
                     {this.props.orderContext.state.project === "" ?
                         <span/>
                         :
-                        <p>Projekt: {this.props.orderContext.state.project}</p>
+                        <p>{this.text.projectName}: {this.props.orderContext.state.project}</p>
                     }
                     {this.props.orderContext.state.reference === "" ?
                         <span/>
                         :
-                        <p>Referenz: {this.props.orderContext.state.reference}</p>
+                        <p>{this.text.reference}: {this.props.orderContext.state.reference}</p>
                     }
                 </div>
                 <div id="checkout-addresses">
-                    <AddressDisplay name="Lieferadresse"
+                    <AddressDisplay name={this.text.deliveryAddress}
                                     address={this.props.orderContext.state.deliveryAddress}/>
-                    <AddressDisplay name="Rechnungsadresse"
+                    <AddressDisplay name={this.text.invoiceAddress}
                                     address={this.props.orderContext.state.invoiceAddress}/>
                 </div>
                 <ArticleDisplay item={this.props.orderContext.state.item}/>
+                <h4>Konfiguration</h4>
+                <ArticleOverview item={this.props.orderContext.state.item}/>
             </React.Fragment>
         )
     }

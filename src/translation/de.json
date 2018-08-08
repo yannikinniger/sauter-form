@@ -33,7 +33,8 @@
         "options": [
           "2-Weg",
           "3-Weg"
-        ]
+        ],
+        "way": "Weg"
       },
       "dnTitle": "Nennweite",
       "article": "Artikel",
@@ -58,7 +59,9 @@
       "optional": "optional"
     },
     "checkout": {
-      "overview": "Übersicht"
+      "overview": "Übersicht",
+      "order": "Bestellen",
+      "sendCopy": "Kopie der Bestellung an mich"
     },
     "buttons": {
       "back": "Zurück",
