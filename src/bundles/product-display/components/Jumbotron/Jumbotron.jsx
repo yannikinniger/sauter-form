@@ -9,10 +9,10 @@ class Jumbotron extends React.Component {
         return (
             <div className="jumbotron">
                 <div className="content-block jumbotron-container">
-                    <h2>Bereits ab 570.-</h2>
+                    <h2>{this.props.text.jumbotron}</h2>
                     <button className="order-now-button"
-                            onClick={() => this.props.history.push(Paths.configuration)}>
-                        Zur Bestellung
+                            onClick={() => this.props.history.push(window.location.pathname + Paths.configuration)}>
+                        {this.props.text.orderButton}
                     </button>
                 </div>
             </div>

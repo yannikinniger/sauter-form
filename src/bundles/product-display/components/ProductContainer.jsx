@@ -4,23 +4,26 @@ import {Link} from 'react-router-dom'
 import Jumbotron from "./Jumbotron/Jumbotron";
 import SetOverview from './SetOverview/SetOverview'
 import {Paths} from "../../order/routes/order";
+import {TranslationProvider} from '../../translations'
 
 export default class ProductContainer extends React.Component {
+
+    translation = TranslationProvider.translationObject.productView;
 
     render() {
         return (
             <div id="product-view">
-                <h1>Einführungsaktion zum Spezialpreis</h1>
+                <h1>{this.translation.title}</h1>
                 <div className="content-block">
-                    <p>Heizungsregler-Set für «witterungsgeführte» Vorlauftemperatur-Regelung</p>
+                    <p>{this.translation.subtitle}</p>
                     <img src="/assets/EQJW126.png" id="product-img" alt="Produktbild"/>
-                    <p>Heizungsregler <a href="https://www.sauter-building-control.ch/?id=318824"
+                    <p>{this.translation.descriptionRegulator} <a href="https://www.sauter-building-control.ch/?id=318824"
                                          target="_blank"
                                          rel="noopener noreferrer">EQJW126F001</a>
                     </p>
                 </div>
-                <SetOverview/>
-                <Jumbotron/>
+                <SetOverview text={this.translation}/>
+                <Jumbotron text={this.translation}/>
                 <div className="content-block">
                     <h3>Schema</h3>
                     <img id="schema" src="/assets/schema.png" alt="Schema"/>
@@ -30,14 +33,11 @@ export default class ProductContainer extends React.Component {
                     </div>
                 </div>
                 <div className="content-block">
-                    <h3>Im Paketpreis nicht enthalten sind: </h3>
+                    <h3>{this.translation.notIncluded.header}</h3>
                     <ul>
-                        <li>Verschraubungen</li>
-                        <li>Montage der Fühler</li>
-                        <li>Montage des Regekugelhahn und des Antriebs</li>
-                        <li>Elektrische Installation und Anschlussarbeiten</li>
-                        <li>Elektro-Tableau</li>
-                        <li>Inbetriebnahme des Heizungsreglers</li>
+                        {this.translation.notIncluded.items.map(item => {
+                            return(<li key={item}>{item}</li>)
+                        })}
                     </ul>
                 </div>
                 <div className="content-block">
@@ -47,8 +47,8 @@ export default class ProductContainer extends React.Component {
                 </div>
                 <div className="content-block">
                     <button className="pull-right order-now-button"
-                            onClick={() => this.props.history.push(Paths.configuration)}>
-                        Zur Bestellung
+                            onClick={() => this.props.history.push(window.location.pathname + Paths.configuration)}>
+                        {this.translation.orderButton}
                     </button>
                 </div>
             </div>

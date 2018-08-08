@@ -1,9 +1,8 @@
 import React, {Component} from 'react';
 import './App.css';
-import OrderBundle from './bundles/order'
-import ProductBundle from './bundles/product-display'
 import {unregister} from "./registerServiceWorker";
 import Header from "./bundles/common/Header/Header";
+import {French} from "./bundles/translations";
 
 export const text = getLanguage();
 
@@ -14,8 +13,7 @@ class App extends Component {
             <div className="App">
                 <Header/>
                 <div id="content-container">
-                    <ProductBundle/>
-                    <OrderBundle/>
+                    <French/>
                 </div>
             </div>
         );

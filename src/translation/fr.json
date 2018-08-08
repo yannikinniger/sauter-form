@@ -1,0 +1,39 @@
+{
+  "productView": {
+    "title": "Promotion de lancement",
+    "subtitle": "Set pour la régulation de la température de départ en fonction de la température extérieure",
+    "descriptionRegulator": "Régulateur de chauffage",
+    "including": "Inclus/e",
+    "descriptionVL": "Sonde de température de départ",
+    "descriptionAT": "Sonde de température extérieure",
+    "descriptionAKM": "Vanne à boule de régulation 2 voies ou 3 voies avec sevomoteur",
+    "jumbotron": "À partir de 570.-",
+    "orderButton": "Passer à la commande",
+    "schema": "Schema",
+    "linkToSchema": "Link zum Normschema",
+    "notIncluded": {
+      "header": "Ne sont pas compris dans le prix du produit",
+      "items": [
+        "Raccords",
+        "Montage des sondes",
+        "Montage de la vanne et du servomoteur",
+        "Installation électrique et travaux de raccordement",
+        "Tableau électrique",
+        "Mise en service du régulateur de chauffage"
+      ]
+    },
+    "localBranches": "Für weitere Auskünfte wenden Sie sich bitte an unsere lokale Niederlassung",
+    "localBranchesLink": "Sites"
+  },
+  "orderView": {
+    "title": "Sélection de la vanne à boule de régulation",
+    "valve": {
+      "title": "Type de vanne",
+      "options": [
+        "2-voies",
+        "3-voies"
+      ]
+    },
+    "dnTitle": "Diamètre nominal"
+  }
+}

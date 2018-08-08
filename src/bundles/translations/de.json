@@ -8,7 +8,7 @@
     "descriptionAT": "Aussentemperatur-Fühler",
     "descriptionAKM": "2- oder 3-Wege Regelkugelhahn inkl.",
     "jumbotron": "Bereits ab 570.-",
-    "orderButton": "Zur Bestellung",
+    "order-button": "Zur Bestellung",
     "schema": "Schema",
     "linkToSchema": "Link zum Normschema",
     "notIncluded": {
