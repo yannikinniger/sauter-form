@@ -1,5 +1,5 @@
 {
-  "productView": {
+  "productDisplay": {
     "title": "Einführungsaktion zum Spezialpreis",
     "subtitle": "Heizungsregler-Set für «witterungsgeführte» Vorlauftemperatur-Regelung",
     "descriptionRegulator": "Heizungsregler",
@@ -25,39 +25,44 @@
     "localBranches": "Für weitere Auskünfte wenden Sie sich bitte an unsere lokale Niederlassung",
     "localBranchesLink": "Standorte"
   },
-  "orderView": {
-    "title": "Auswahl Regelkugelhahn",
-    "valve": {
-      "title": "Ventiltyp",
-      "options": [
-        "2-Weg",
-        "3-Weg"
-      ]
+  "order": {
+    "configuration": {
+      "title": "Auswahl Regelkugelhahn",
+      "valve": {
+        "title": "Ventiltyp",
+        "options": [
+          "2-Weg",
+          "3-Weg"
+        ]
+      },
+      "dnTitle": "Nennweite",
+      "article": "Artikel",
+      "amount": "Anzahl",
+      "price": "Preis",
+      "vatInformation": "netto, exkl. MwSt",
+      "backButton": "Zurück",
+      "forwardButton": "Weiter"
     },
-    "dnTitle": "Nennweite",
-    "article": "Artikel",
-    "amount": "Anzahl",
-    "price": "Preis",
-    "vatInformation": "netto, exkl. MwSt",
-    "backButton": "Zurück",
-    "forwardButton": "Weiter"
-  },
-  "addressContainer": {
-    "projectName": "Projekt",
-    "reference": "Referenz",
-    "deliveryAddress": "Lieferadresse",
-    "invoiceAddress": "Rechnungsadresse",
-    "company": "Firma",
-    "street": "Strasse",
-    "city": "Ort",
-    "zip": "Postleitzahl",
-    "email": "Email",
-    "sameInvoiceAddress": "gleiche Rechnungsadresse",
-    "necessary": "Benötigt",
-    "optional": "optional"
-  },
-  "buttons": {
-    "back": "Zurück",
-    "proceed": "Weiter"
+    "address": {
+      "projectName": "Projekt",
+      "reference": "Referenz",
+      "deliveryAddress": "Lieferadresse",
+      "invoiceAddress": "Rechnungsadresse",
+      "company": "Firma",
+      "street": "Strasse",
+      "city": "Ort",
+      "zip": "Postleitzahl",
+      "email": "Email",
+      "sameInvoiceAddress": "gleiche Rechnungsadresse",
+      "necessary": "Benötigt",
+      "optional": "optional"
+    },
+    "checkout": {
+      "overview": "Übersicht"
+    },
+    "buttons": {
+      "back": "Zurück",
+      "proceed": "Weiter"
+    }
   }
 }

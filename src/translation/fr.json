@@ -1,5 +1,5 @@
 {
-  "productView": {
+  "productDisplay": {
     "title": "Promotion de lancement",
     "subtitle": "Set pour la régulation de la température de départ en fonction de la température extérieure",
     "descriptionRegulator": "Régulateur de chauffage",
@@ -25,39 +25,42 @@
     "localBranches": "Für weitere Auskünfte wenden Sie sich bitte an unsere lokale Niederlassung",
     "localBranchesLink": "Sites"
   },
-  "orderView": {
-    "title": "Sélection de la vanne à boule de régulation",
-    "valve": {
-      "title": "Type de vanne",
-      "options": [
-        "2-voies",
-        "3-voies"
-      ]
+  "order": {
+    "configuration": {
+      "title": "Sélection de la vanne à boule de régulation",
+      "valve": {
+        "title": "Type de vanne",
+        "options": [
+          "2-voies",
+          "3-voies"
+        ]
+      },
+      "dnTitle": "Diamètre nominal",
+      "article": "Article",
+      "amount": "Nombre",
+      "price": "Prix",
+      "vatInformation": "net, excl. TVA"
     },
-    "dnTitle": "Diamètre nominal",
-    "article": "Article",
-    "amount": "Nombre",
-    "price": "Prix",
-    "vatInformation": "net, excl. TVA",
-    "backButton": "Retour",
-    "forwardButton": "Suivant"
-  },
-  "addressContainer": {
-    "projectName": "Nom de projet",
-    "reference": "Reference",
-    "deliveryAddress": "Adresse de livraison",
-    "invoiceAddress": "Adresse de facturation",
-    "company": "Entreprise",
-    "street": "Rue",
-    "city": "Lieu",
-    "zip": "Code Postal",
-    "email": "Émail",
-    "sameInvoiceAddress": "Même adresse de facturation",
-    "necessary": "nécessaire",
-    "optional": "facultatif"
-  },
-  "buttons": {
-    "back": "Retour",
-    "proceed": "Suivant"
+    "address": {
+      "projectName": "Nom de projet",
+      "reference": "Reference",
+      "deliveryAddress": "Adresse de livraison",
+      "invoiceAddress": "Adresse de facturation",
+      "company": "Entreprise",
+      "street": "Rue",
+      "city": "Lieu",
+      "zip": "Code Postal",
+      "email": "Émail",
+      "sameInvoiceAddress": "Même adresse de facturation",
+      "necessary": "nécessaire",
+      "optional": "facultatif"
+    },
+    "checkout": {
+      "overview": "Übersicht"
+    },
+    "buttons": {
+      "back": "Retour",
+      "proceed": "Suivant"
+    }
   }
 }

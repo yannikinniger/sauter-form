@@ -11,7 +11,7 @@ import {ButtonRow} from "../common/ButtonRow/ButtonRow";
 export default class AddressContainer extends React.Component {
 
     hasError = false;
-    text = TranslationProvider.translationObject.addressContainer;
+    text = TranslationProvider.translationObject.order.address;
 
     constructor(props) {
         super(props);

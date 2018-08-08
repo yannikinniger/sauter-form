@@ -8,7 +8,7 @@ import {TranslationProvider} from '../../translations'
 
 export default class ProductContainer extends React.Component {
 
-    translation = TranslationProvider.translationObject.productView;
+    translation = TranslationProvider.translationObject.productDisplay;
 
     render() {
         return (

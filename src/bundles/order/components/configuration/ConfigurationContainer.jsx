@@ -5,10 +5,11 @@ import {RadioInput} from '../../../common/Input'
 import OrderContext from '../../context/OrderContext'
 import {Paths} from '../../routes/order'
 import {TranslationProvider} from "../../../translations";
+import {ButtonRow} from "../common/ButtonRow/ButtonRow";
 
 export default class ConfigurationContainer extends React.Component {
 
-    text = TranslationProvider.translationObject.orderView;
+    text = TranslationProvider.translationObject.order.configuration;
 
     render() {
         return (
@@ -26,13 +27,10 @@ export default class ConfigurationContainer extends React.Component {
                         }
                     </OrderContext.Consumer>
                 </div>
-                <div className="twin-button-row">
-                    <button onClick={() => this.props.history.push(`/${TranslationProvider.currentLanguage}`)}>
-                        {this.text.backButton}
-                    </button>
-                    <button onClick={() => this.props.history.push(Paths.address)}
-                            type="button">{this.text.forwardButton}</button>
-                </div>
+                <ButtonRow
+                    backCallback={() => this.props.history.push(`/${TranslationProvider.currentLanguage}`)}
+                    proceedCallback={() => this.props.history.push(Paths.address)}
+                />
             </div>
         )
     }
