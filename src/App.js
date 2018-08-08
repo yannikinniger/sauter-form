@@ -11,6 +11,9 @@ class App extends Component {
 
     constructor(props) {
         super(props);
+        if (window.location.pathname === '/') {
+            props.history.push("/de"); // default redirect to german version
+        }
         this.setLanguageFromUrl(window.location);
         props.history.listen(location => this.setLanguageFromUrl(location));
     }
