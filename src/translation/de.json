@@ -38,6 +38,26 @@
     "article": "Artikel",
     "amount": "Anzahl",
     "price": "Preis",
-    "vatInformation": "netto, exkl. MwSt"
+    "vatInformation": "netto, exkl. MwSt",
+    "backButton": "Zurück",
+    "forwardButton": "Weiter"
+  },
+  "addressContainer": {
+    "projectName": "Projekt",
+    "reference": "Referenz",
+    "deliveryAddress": "Lieferadresse",
+    "invoiceAddress": "Rechnungsadresse",
+    "company": "Firma",
+    "street": "Strasse",
+    "city": "Ort",
+    "zip": "Postleitzahl",
+    "email": "Email",
+    "sameInvoiceAddress": "gleiche Rechnungsadresse",
+    "necessary": "Benötigt",
+    "optional": "optional"
+  },
+  "buttons": {
+    "back": "Zurück",
+    "proceed": "Weiter"
   }
 }

@@ -5,10 +5,13 @@ import formExtract from "form-extract";
 import OrderContext from "../../context/OrderContext";
 import {FieldInput} from '../../../common/Input/index'
 import {Paths} from "../../routes/order";
+import {TranslationProvider} from "../../../translations";
+import {ButtonRow} from "../common/ButtonRow/ButtonRow";
 
 export default class AddressContainer extends React.Component {
 
     hasError = false;
+    text = TranslationProvider.translationObject.addressContainer;
 
     constructor(props) {
         super(props);
@@ -46,33 +49,33 @@ export default class AddressContainer extends React.Component {
             <OrderContext.Consumer>
                 {context => (
                     <div id="content">
-                        <FieldInput title="Projektname" name="project" value={context.state.project}
+                        <FieldInput title={this.text.projectName} name="project" value={context.state.project}
                                     onChange={project => context.setState({project: project})}
-                                    placeholder="optional"/>
-                        <FieldInput title="Referenz" name="project" value={context.state.reference}
+                                    placeholder={this.text.optional}/>
+                        <FieldInput title={this.text.reference} name="reference" value={context.state.reference}
                                     onChange={reference => context.setState({reference: reference})}
-                                    placeholder="optional"/>
-                        <AddressSection title="Lieferadresse" formName="deliveryAddress" orderContext={context}/>
-                        <FieldInput title="Email" name="email" value={context.state.email}
+                                    placeholder={this.text.optional}/>
+                        <AddressSection title={this.text.deliveryAddress} formName="deliveryAddress"
+                                        orderContext={context} text={this.text}/>
+                        <FieldInput title={this.text.email} name="email" value={context.state.email}
                                     onChange={email => context.setState({email: email})}/>
                         <div className="form-row">
                                     <span>
                                         <input type="checkbox" defaultChecked
                                                onClick={this.handleInvoiceAddressChange.bind(this)}/>
-                                        <label>gleiche Rechnungsadresse</label>
+                                        <label>{this.text.sameInvoiceAddress}</label>
                                     </span>
                         </div>
                         {this.state.sameInvoiceAddress ?
                             <div/>
                             :
-                            <AddressSection title="Rechnungsadresse" formName="invoiceAddress" orderContext={context}/>
+                            <AddressSection title={this.text.invoiceAddress} formName="invoiceAddress"
+                                            orderContext={context} text={this.text}/>
                         }
-                        <div className="twin-button-row">
-                            <button onClick={() => this.props.history.push(Paths.configuration)}>Zurück</button>
-                            <button onClick={(event) => this.handleSubmit(event, context)}>
-                                Weiter
-                            </button>
-                        </div>
+                        <ButtonRow
+                            backCallback={() => this.props.history.push(Paths.configuration)}
+                            proceedCallback={(event) => this.handleSubmit(event, context)}
+                        />
                     </div>
                 )}
             </OrderContext.Consumer>
@@ -96,7 +99,7 @@ export default class AddressContainer extends React.Component {
                 const elements = document.getElementsByName(key);
                 elements.forEach(element => {
                     element.classList.add('error');
-                    element.placeholder = "Benötigt";
+                    element.placeholder = this.text.necessary;
                 })
             })
     }

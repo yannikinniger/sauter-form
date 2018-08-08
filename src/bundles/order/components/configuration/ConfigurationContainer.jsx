@@ -28,9 +28,10 @@ export default class ConfigurationContainer extends React.Component {
                 </div>
                 <div className="twin-button-row">
                     <button onClick={() => this.props.history.push(`/${TranslationProvider.currentLanguage}`)}>
-                        Zurück
+                        {this.text.backButton}
                     </button>
-                    <button onClick={() => this.props.history.push(Paths.address)} type="button">Weiter</button>
+                    <button onClick={() => this.props.history.push(Paths.address)}
+                            type="button">{this.text.forwardButton}</button>
                 </div>
             </div>
         )

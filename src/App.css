@@ -80,7 +80,7 @@ a {
     align-items: center;
 }
 
-.twin-form-row, .twin-button-row {
+.twin-form-row {
     display: flex;
     justify-content: space-between;
 }
@@ -88,15 +88,6 @@ a {
 .twin-form-row > :first-child {
     padding-right: 10px;
     margin-right: 10px;
-}
-
-.twin-button-row > :first-child {
-    background-color: #999;
-    margin-right: 10px;
-}
-
-.twin-button-row > :nth-child(2) {
-    margin-right: -10px;
 }
 
 #content {
@@ -110,10 +101,6 @@ a {
 @media only screen and (max-width: 600px) {
     #content {
         max-width: 90vw;
-    }
-
-    .twin-button-row {
-        flex-direction: column-reverse;
     }
 
     .content-block {

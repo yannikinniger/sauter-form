@@ -38,6 +38,26 @@
     "article": "Article",
     "amount": "Nombre",
     "price": "Prix",
-    "vatInformation": "net, excl. TVA"
+    "vatInformation": "net, excl. TVA",
+    "backButton": "Retour",
+    "forwardButton": "Suivant"
+  },
+  "addressContainer": {
+    "projectName": "Nom de projet",
+    "reference": "Reference",
+    "deliveryAddress": "Adresse de livraison",
+    "invoiceAddress": "Adresse de facturation",
+    "company": "Entreprise",
+    "street": "Rue",
+    "city": "Lieu",
+    "zip": "Code Postal",
+    "email": "Émail",
+    "sameInvoiceAddress": "Même adresse de facturation",
+    "necessary": "nécessaire",
+    "optional": "facultatif"
+  },
+  "buttons": {
+    "back": "Retour",
+    "proceed": "Suivant"
   }
 }
