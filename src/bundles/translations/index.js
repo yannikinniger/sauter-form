@@ -1,2 +1,2 @@
-export {default as French} from './French'
+export {default as Translated} from './Translated'
 export {default as TranslationProvider} from './TranslationProvider'

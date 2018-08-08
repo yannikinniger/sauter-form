@@ -47,7 +47,7 @@ export default class ProductContainer extends React.Component {
                 </div>
                 <div className="content-block">
                     <button className="pull-right order-now-button"
-                            onClick={() => this.props.history.push(window.location.pathname + Paths.configuration)}>
+                            onClick={() => this.props.history.push(`${window.location.pathname}/${Paths.configuration}`)}>
                         {this.translation.orderButton}
                     </button>
                 </div>

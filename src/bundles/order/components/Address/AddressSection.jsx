@@ -8,7 +8,6 @@ export default class AddressSection extends React.Component {
     }
 
     render() {
-        console.log(this.props.orderContext.state[this.props.formName]);
         const address = this.props.orderContext.state[this.props.formName];
         return (
             <div className="address-section">

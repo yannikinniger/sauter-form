@@ -34,6 +34,10 @@
         "3-voies"
       ]
     },
-    "dnTitle": "Diamètre nominal"
+    "dnTitle": "Diamètre nominal",
+    "article": "Article",
+    "amount": "Nombre",
+    "price": "Prix",
+    "vatInformation": "net, excl. TVA"
   }
 }

@@ -11,7 +11,7 @@ class Jumbotron extends React.Component {
                 <div className="content-block jumbotron-container">
                     <h2>{this.props.text.jumbotron}</h2>
                     <button className="order-now-button"
-                            onClick={() => this.props.history.push(window.location.pathname + Paths.configuration)}>
+                            onClick={() => this.props.history.push(`${window.location.pathname}/${Paths.configuration}`)}>
                         {this.props.text.orderButton}
                     </button>
                 </div>

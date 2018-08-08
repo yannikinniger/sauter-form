@@ -8,10 +8,10 @@ export default class PriceDisplay extends React.Component {
         return (
             <React.Fragment>
                 <div className="price-display">
-                    <h2>Artikel</h2>
+                    <h2>{this.props.text.article}</h2>
                     <ArticleDisplay item={this.props.orderContext.state.item}/>
                     <div className="price-row">
-                        <label>Anzahl</label>
+                        <label>{this.props.text.amount}</label>
                         <span>
                             <i className="fas fa-minus" onClick={() => this.props.orderContext.decreaseQuantity()}/>
                             <label id="quantity">{this.props.orderContext.state.item.quantity}</label>
@@ -19,8 +19,8 @@ export default class PriceDisplay extends React.Component {
                         </span>
                     </div>
                     <div className="price-row">
-                        <label>Preis</label>
-                        <label>{this.props.orderContext.state.item.price}.00 netto exkl. MwSt</label>
+                        <label>{this.props.text.price}</label>
+                        <label>{this.props.orderContext.state.item.price}.00 {this.props.text.vatInformation}</label>
                     </div>
                 </div>
             </React.Fragment>

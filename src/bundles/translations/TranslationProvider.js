@@ -1,7 +1,7 @@
 export default class TranslationProvider {
 
     static currentLanguage = 'de';
-    static translationObject = require(`./${TranslationProvider.currentLanguage}.json`);
+    static translationObject = require(`../../translation/${TranslationProvider.currentLanguage}.json`);
 
     static changeLanguage(newLanguage) {
         if (newLanguage !== TranslationProvider.currentLanguage) {
@@ -12,7 +12,6 @@ export default class TranslationProvider {
                 // keep the current language if no file was found
             }
         }
-        console.log()
     }
 
 }

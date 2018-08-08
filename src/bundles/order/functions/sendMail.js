@@ -19,7 +19,6 @@ export default function sendMail(context) {
             method: 'POST',
             body: JSON.stringify(payload)
         }).then(response => {
-            console.log(response);
             resolve(response.status === 200);
         });
     })

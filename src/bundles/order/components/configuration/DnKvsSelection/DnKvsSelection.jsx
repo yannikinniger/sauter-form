@@ -16,7 +16,7 @@ export default class DnKvsSelection extends React.Component {
         return (
             <React.Fragment>
                 <div className="form-row">
-                    <label>Nennweite</label>
+                    <label>{this.props.text.dnTitle}</label>
                     <div className="selectdiv">
                         <select id="dn" onChange={(e) => DnKvsSelection.dnChanged(e, this.props.orderContext)}>
                             {dnOptions}
