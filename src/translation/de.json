@@ -23,7 +23,9 @@
       ]
     },
     "localBranches": "Für weitere Auskünfte wenden Sie sich bitte an unsere lokale Niederlassung",
-    "localBranchesLink": "Standorte"
+    "localBranchesLink": "Standorte",
+    "link": "Link",
+    "regulatorKit": "Heizungsregler-Set"
   },
   "order": {
     "configuration": {
@@ -41,8 +43,7 @@
       "amount": "Anzahl",
       "price": "Preis",
       "vatInformation": "netto, exkl. MwSt",
-      "backButton": "Zurück",
-      "forwardButton": "Weiter"
+      "configuration": "Konfiguration"
     },
     "address": {
       "projectName": "Projekt",

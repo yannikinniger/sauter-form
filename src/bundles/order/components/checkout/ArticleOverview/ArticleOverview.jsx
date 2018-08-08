@@ -1,20 +1,22 @@
-import React from "react";
+import React, {Fragment} from "react";
 import {TranslationProvider} from "../../../../translations";
 
 const ArticleOverview = (props) => {
     const text = TranslationProvider.translationObject.order.configuration;
-    console.log(text);
     return(
-        <div style={style}>
-            <section>{text.valve.title}</section>
-            <section>{props.item.valveAmount}-{text.valve.way}</section>
-            <section>DN</section>
-            <section>{props.item.dn}</section>
-            <section>KVS</section>
-            <section>{props.item.kvs}</section>
-            <section>{text.price}</section>
-            <section>{props.item.price}.-</section>
-        </div>
+        <Fragment>
+            <h4>{text.configuration}</h4>
+            <div style={style}>
+                <section>{text.valve.title}</section>
+                <section>{props.item.valveAmount}-{text.valve.way}</section>
+                <section>DN</section>
+                <section>{props.item.dn}</section>
+                <section>KVS</section>
+                <section>{props.item.kvs}</section>
+                <section>{text.price}</section>
+                <section>{props.item.price}.-</section>
+            </div>
+        </Fragment>
     )
 };
 

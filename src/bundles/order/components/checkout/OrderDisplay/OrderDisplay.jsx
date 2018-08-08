@@ -30,7 +30,6 @@ export default class OrderDisplay extends React.Component {
                                     address={this.props.orderContext.state.invoiceAddress}/>
                 </div>
                 <ArticleDisplay item={this.props.orderContext.state.item}/>
-                <h4>Konfiguration</h4>
                 <ArticleOverview item={this.props.orderContext.state.item}/>
             </React.Fragment>
         )

@@ -23,7 +23,9 @@
       ]
     },
     "localBranches": "Für weitere Auskünfte wenden Sie sich bitte an unsere lokale Niederlassung",
-    "localBranchesLink": "Sites"
+    "localBranchesLink": "Sites",
+    "link": "Lien",
+    "regulatorKit": "Régulateur de chauffage ?Set?"
   },
   "order": {
     "configuration": {
@@ -40,7 +42,8 @@
       "article": "Article",
       "amount": "Nombre",
       "price": "Prix",
-      "vatInformation": "net, excl. TVA"
+      "vatInformation": "net, excl. TVA",
+      "configuration": "Configuration"
     },
     "address": {
       "projectName": "Nom de projet",
