@@ -1,5 +1,5 @@
 export default function sendMail(context) {
-    const apiUrl = 'https://hlk-common.ch/submit';
+    const apiUrl = 'https://hlk-components.ch/submit';
     const item = context.state.item;
     const payload = {
         project: context.state.project,
