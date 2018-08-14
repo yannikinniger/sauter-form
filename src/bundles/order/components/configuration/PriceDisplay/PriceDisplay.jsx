@@ -20,7 +20,7 @@ export default class PriceDisplay extends React.Component {
                     </div>
                     <div className="price-row">
                         <label>{this.props.text.price}</label>
-                        <label>{this.props.orderContext.state.item.price}.00 {this.props.text.vatInformation}</label>
+                        <label>CHF {this.props.orderContext.state.item.price}.00 {this.props.text.vatInformation}</label>
                     </div>
                 </div>
             </React.Fragment>

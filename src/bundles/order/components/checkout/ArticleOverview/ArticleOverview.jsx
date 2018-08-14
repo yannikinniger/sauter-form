@@ -14,7 +14,7 @@ const ArticleOverview = (props) => {
                 <section>KVS</section>
                 <section>{props.item.kvs}</section>
                 <section>{text.price}</section>
-                <section>{props.item.price}.-</section>
+                <section>CHF {props.item.price}.-</section>
             </div>
         </Fragment>
     )
