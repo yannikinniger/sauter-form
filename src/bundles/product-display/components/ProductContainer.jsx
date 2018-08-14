@@ -25,11 +25,12 @@ export default class ProductContainer extends React.Component {
                 <SetOverview text={this.translation}/>
                 <Jumbotron text={this.translation}/>
                 <div className="content-block">
-                    <h3>Schema</h3>
+                    <h3>{this.translation.schema}</h3>
                     <img id="schema" src="/assets/schema.png" alt="Schema"/>
                     <div>
-                        <Link to={process.env.PUBLIC_URL + '/normschema_EQJW126.pdf'} target="_blank">Link zum
-                            Normschema</Link>
+                        <Link to={process.env.PUBLIC_URL + '/normschema_EQJW126.pdf'} target="_blank">
+                            {this.translation.linkToSchema}
+                        </Link>
                     </div>
                 </div>
                 <div className="content-block">
@@ -41,9 +42,9 @@ export default class ProductContainer extends React.Component {
                     </ul>
                 </div>
                 <div className="content-block">
-                    <p>Für weitere Auskünfte wenden Sie sich bitte an unsere lokale Niederlassung</p>
+                    <p>{this.translation.localBranches}</p>
                     <a href="https://www.sauter-building-control.ch/unternehmen-sauter/standorte-kontakte-sauter.html"
-                       target="_blank" rel="noopener noreferrer">Standorte</a>
+                       target="_blank" rel="noopener noreferrer">{this.translation.localBranchesLink}</a>
                 </div>
                 <div className="content-block">
                     <button className="pull-right order-now-button"

@@ -3,16 +3,17 @@
     "title": "Promotion de lancement",
     "subtitle": "Set pour la régulation de la température de départ en fonction de la température extérieure",
     "descriptionRegulator": "Régulateur de chauffage",
-    "including": "Inclus/e",
+    "including": "Inclus",
     "descriptionVL": "Sonde de température de départ",
     "descriptionAT": "Sonde de température extérieure",
-    "descriptionAKM": "Vanne à boule de régulation 2 voies ou 3 voies avec sevomoteur",
+    "descriptionAKM": "Vanne à boule de régulation 2 voies ou 3 voies avec",
+    "linkTextAKM": "servomoteur rotatif",
     "jumbotron": "À partir de 570.-",
     "orderButton": "Passer à la commande",
-    "schema": "Schema",
-    "linkToSchema": "Link zum Normschema",
+    "schema": "Schéma",
+    "linkToSchema": "Liens vers le schéma type",
     "notIncluded": {
-      "header": "Ne sont pas compris dans le prix du produit",
+      "header": "Ne sont pas compris dans le prix",
       "items": [
         "Raccords",
         "Montage des sondes",
@@ -22,10 +23,10 @@
         "Mise en service du régulateur de chauffage"
       ]
     },
-    "localBranches": "Für weitere Auskünfte wenden Sie sich bitte an unsere lokale Niederlassung",
-    "localBranchesLink": "Sites",
+    "localBranches": "Pour de plus amples informations, veuillez à contacter le bureau de vente le plus proche de vous.",
+    "localBranchesLink": "Sites et contacts",
     "link": "Lien",
-    "regulatorKit": "Régulateur de chauffage ?Set?"
+    "regulatorKit": "Set régulateur de chauffage"
   },
   "order": {
     "configuration": {
@@ -42,7 +43,7 @@
       "article": "Article",
       "amount": "Nombre",
       "price": "Prix",
-      "vatInformation": "net, excl. TVA",
+      "vatInformation": "net, hors TVA",
       "configuration": "Configuration"
     },
     "address": {
@@ -60,7 +61,7 @@
       "optional": "facultatif"
     },
     "checkout": {
-      "overview": "Übersicht",
+      "overview": "Aperçu",
       "order": "Commander",
       "sendCopy": "Copie de la commande à moi"
     },

@@ -27,7 +27,7 @@ export default function SetOverview(props) {
                     {props.text.descriptionAKM} <a
                     href="https://www.sauter-building-control.ch/de/produkte/produktdetails/pdm/akm-105-115-drehantrieb-fuer-kugelhahn.html"
                     target="_blank" rel="noopener noreferrer">
-                    Drehantrieb AKM
+                    {props.text.linkTextAKM}
                 </a>
                 </p>
             </div>
